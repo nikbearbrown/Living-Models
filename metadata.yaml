@@ -1,0 +1,38 @@
+---
+title: "Living Models"
+subtitle: "Causal Intelligence for the Decisions That Actually Matter"
+author:
+  - Nik Bear Brown
+date: 2026
+lang: en-US
+description: |
+  A working architecture for causal intelligence — systems that reason about
+  deliberate intervention, not just description — for executives, strategists,
+  and engineers who have to act under conditions where the past is no longer
+  a reliable guide to the future. Built around Pearl's three-rung Ladder of
+  Causation, the do-operator, structural causal models, and the orchestrated
+  loop that takes an executive from a validated graph through ranked
+  interventions to a four-part decision report and the DecisionOps that keep
+  the model honest after deployment.
+rights: © 2026 Nik Bear Brown. All rights reserved.
+publisher: Bear Brown LLC
+subject:
+  - Causal Inference — Practical
+  - Decision Intelligence
+  - AI Architecture
+  - Strategic Analytics
+keywords:
+  - Pearl's Ladder
+  - do-operator
+  - structural causal model
+  - DAG
+  - counterfactual
+  - causal forest
+  - double machine learning
+  - KEBN
+  - DecisionOps
+  - Living Model
+ibooks:
+  version: 1.0.0
+toc-title: Contents
+...

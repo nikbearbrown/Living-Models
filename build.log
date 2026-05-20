@@ -1,0 +1,23 @@
+[WARNING] Could not fetch resource 'images/john-snow.jpg': PandocResourceNotFound "images/john-snow.jpg"
+[WARNING] Could not fetch resource 'images/trygve-haavelmo.jpg': PandocResourceNotFound "images/trygve-haavelmo.jpg"
+[WARNING] Could not fetch resource 'images/konrad-zuse.jpg': PandocResourceNotFound "images/konrad-zuse.jpg"
+[WARNING] Could not fetch resource 'images/frank-knight.jpg': PandocResourceNotFound "images/frank-knight.jpg"
+[WARNING] Could not fetch resource 'images/karl-pearson.jpg': PandocResourceNotFound "images/karl-pearson.jpg"
+[WARNING] Could not fetch resource 'images/sewall-wright.jpg': PandocResourceNotFound "images/sewall-wright.jpg"
+[WARNING] Could not fetch resource 'images/bertrand-russell.jpg': PandocResourceNotFound "images/bertrand-russell.jpg"
+[WARNING] Could not fetch resource 'images/gertrude-cox.jpg': PandocResourceNotFound "images/gertrude-cox.jpg"
+[WARNING] Could not fetch resource 'images/charles-sanders-peirce.jpg': PandocResourceNotFound "images/charles-sanders-peirce.jpg"
+[WARNING] Could not fetch resource 'images/jerome-cornfield.jpg': PandocResourceNotFound "images/jerome-cornfield.jpg"
+[WARNING] Could not fetch resource 'images/janet-lane-claypon.jpg': PandocResourceNotFound "images/janet-lane-claypon.jpg"
+[WARNING] Could not fetch resource 'images/esther-boserup.jpg': PandocResourceNotFound "images/esther-boserup.jpg"
+[WARNING] Could not fetch resource 'images/kenneth-boulding.jpg': PandocResourceNotFound "images/kenneth-boulding.jpg"
+[WARNING] Could not fetch resource 'images/michael-polanyi.jpg': PandocResourceNotFound "images/michael-polanyi.jpg"
+[WARNING] Could not fetch resource 'images/amos-tversky.jpg': PandocResourceNotFound "images/amos-tversky.jpg"
+[WARNING] Could not fetch resource 'images/margaret-mead.jpg': PandocResourceNotFound "images/margaret-mead.jpg"
+[WARNING] Could not fetch resource 'images/bruno-de-finetti.jpg': PandocResourceNotFound "images/bruno-de-finetti.jpg"
+[WARNING] Could not fetch resource 'images/prasanta-chandra-mahalanobis.jpg': PandocResourceNotFound "images/prasanta-chandra-mahalanobis.jpg"
+[WARNING] Could not fetch resource 'images/marie-neurath.jpg': PandocResourceNotFound "images/marie-neurath.jpg"
+[WARNING] Could not fetch resource 'images/gregory-bateson.jpg': PandocResourceNotFound "images/gregory-bateson.jpg"
+[WARNING] Could not convert TeX math 'E = RR + \sqrt{RR \cdot (RR - 1)}', rendering as TeX
+[WARNING] Could not convert TeX math 'E = 1.13 + \sqrt{1.13 \times 0.13} \approx 1.13 + 0.38 = 1.51', rendering as TeX
+[WARNING] Could not convert TeX math 'E = RR + \sqrt{RR(RR-1)}', rendering as TeX
