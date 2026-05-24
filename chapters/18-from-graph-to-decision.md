@@ -12,7 +12,8 @@ The list cannot be acted on as a list. The interventions interact. Some require 
 
 She needs a portfolio. She needs the model to tell her not just which interventions are good but which six or so should be done together, given that the budget is finite, the labor is finite, the calendar is finite, and the interventions interact. This chapter is about how the model produces that portfolio. The graph from Chapter 17 is the starting point. The recommendation that goes into the board meeting on Monday is the destination. Four operational steps separate the two.
 
-<!-- → [DIAGRAM: Four-step pipeline overview — four boxes in a horizontal sequence: (1) Parameterize the Graph, (2) Run the Counterfactual, (3) Rank by Expected Value, (4) Constrained-Knapsack Portfolio; below each box, a one-line description of its input and output; arrows between boxes; a label at the far left "Validated Graph (Ch. 17)" and at the far right "Structured Package → Ch. 19"; purpose is to orient the reader to the chapter's architecture before the steps are developed individually] -->
+![Four-step pipeline overview ](images/18-from-graph-to-decision-fig-01.png)
+*Figure 18.1 — Four-step pipeline overview *
 
 ![Figure 18.1 — Four-step pipeline overview](images/18-from-graph-to-decision-fig-01.jpg)
 
@@ -41,7 +42,8 @@ The first is **modularity**. Each parameterized mechanism in the graph should be
 
 The second is **uncertainty representation**. Every parameter in the model has uncertainty around it. Some parameters are estimated from large samples and have tight confidence intervals; others are estimated from thin data or expert input and have wide intervals. The parameterization has to carry the uncertainty forward. When the model produces a recommendation, the recommendation should come with bounds, not just a point estimate, and the bounds should reflect the underlying parameter uncertainty. Chapter 19's executive report depends on this; without uncertainty propagated through the pipeline, the report cannot honestly communicate confidence to the decision-maker.
 
-<!-- → [DIAGRAM: Parameterization pipeline — a DAG fragment showing two parent nodes X1 and X2 pointing into Y; beside the arrows, coefficients β1 and β2 with illustrative confidence intervals; beside the node Y, the structural equation Y = β1 X1 + β2 X2 + ε; a second panel showing the same structure with a nonlinear curve replacing the linear relationship, labeled "use when mechanism is nonlinear in decision range"; caption: "The graph specifies structure; the parameters specify magnitude and uncertainty"] -->
+![The graph specifies structure; the parameters specify magnitude and uncertainty](images/18-from-graph-to-decision-fig-02.png)
+*Figure 18.2 — Parameterization pipeline *
 
 ![Figure 18.2 — Parameterization pipeline](images/18-from-graph-to-decision-fig-02.jpg)
 
@@ -107,7 +109,8 @@ For the operations example, the heterogeneity question is less about customer se
 
 A methodological point worth underlining: the EV ranking depends on the parameterized model being right. If the model overestimates the effect size of an intervention, the ranking will overrate it. If the probability estimates are miscalibrated — typically toward overconfidence, given the cognitive biases of Chapter 15 — the ranking will be miscalibrated in the same direction. Sensitivity analysis is the discipline that addresses this. For each intervention near the top of the ranking, the model should be queried with perturbed parameters to see how robust the ranking is. Interventions whose EV estimates are robust to plausible parameter perturbations are more credible; interventions whose EV depends critically on a specific parameter value are less credible. Chapter 19's executive report surfaces this distinction explicitly.
 
-<!-- → [CHART: EV ranking visualization — horizontal bar chart with 10 candidate interventions ranked by EV; each bar shows the point estimate with a horizontal error bar representing the 90% confidence interval; bars color-coded by confidence width (narrow = high confidence, wide = low confidence); a vertical dashed line at zero; four bars color-coded by response segment (persuadable, sure thing, lost cause, do-not-disturb) with a legend; caption: "The ranking is a distribution, not a list; uncertainty determines which interventions are robustly ranked above alternatives"] -->
+![The ranking is a distribution, not a list; uncertainty determines which interventions are robustly ranked above alternatives](images/18-from-graph-to-decision-fig-04.png)
+*Figure 18.4 — EV ranking visualization *
 
 ![Figure 18.4 — EV ranking visualization](images/18-from-graph-to-decision-fig-04.jpg)
 
@@ -350,3 +353,36 @@ Who was Prasanta Chandra Mahalanobis, and how does his work using statistical-ec
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 18.1 — Four-step pipeline overview 
+
+Create a standalone D3 v7 HTML file for Figure Four-step pipeline overview . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-step pipeline overview — four boxes in a horizontal sequence: (1) Parameterize the Graph, (2) Run the Counterfactual, (3) Rank by Expected Value, (4) Constrained-Knapsack Portfolio; below each box, a one-line description of its input and output; arrows between boxes; a label at the far left "Validated Graph (Ch. 17)" and at the far right "Structured Package → Ch. 19"; purpose is to orient the reader to the chapter's architecture before the steps are developed individually. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/18-from-graph-to-decision-fig-01.html`
+
+---
+
+### Figure 18.2 — Parameterization pipeline 
+
+Create a standalone D3 v7 HTML file for Figure Parameterization pipeline . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Parameterization pipeline — a DAG fragment showing two parent nodes X1 and X2 pointing into Y; beside the arrows, coefficients β1 and β2 with illustrative confidence intervals; beside the node Y, the structural equation Y = β1 X1 + β2 X2 + ε; a second panel showing the same structure with a nonlinear curve replacing the linear relationship, labeled "use when mechanism is nonlinear in decision range"; caption: "The graph specifies structure; the parameters specify magnitude and uncertainty". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/18-from-graph-to-decision-fig-02.html`
+
+---
+
+### Figure 18.4 — EV ranking visualization 
+
+Create a standalone D3 v7 HTML file for Figure EV ranking visualization . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: EV ranking visualization — horizontal bar chart with 10 candidate interventions ranked by EV; each bar shows the point estimate with a horizontal error bar representing the 90% confidence interval; bars color-coded by confidence width (narrow = high confidence, wide = low confidence); a vertical dashed line at zero; four bars color-coded by response segment (persuadable, sure thing, lost cause, do-not-disturb) with a legend; caption: "The ranking is a distribution, not a list; uncertainty determines which interventions are robustly ranked above alternatives". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/18-from-graph-to-decision-fig-04.html`

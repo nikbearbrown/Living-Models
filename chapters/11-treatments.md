@@ -44,7 +44,8 @@ Randomization solves this by surgical intervention on the causal graph. Formally
 
 The result is that the distribution of outcomes in the treated group, $P(Y | X=1)$, is identical to the interventional distribution $P(Y | do(X=1))$. The two quantities, which are different in observational data, become equal under randomization. The average treatment effect — the difference in expected outcomes between the treated and control groups — estimates $E[Y | do(X=1)] - E[Y | do(X=0)]$ without any further adjustment.
 
-<!-- → [DIAGRAM: Two causal graphs side by side. Left graph (observational): node U (unmeasured confounder, shown as dashed circle) with arrows pointing to both X (treatment) and Y (outcome); X has an arrow to Y; the path X ← U → Y is highlighted in red and labeled "backdoor path: unblockable (U unmeasured)." Right graph (after randomization): the U→X arrow is replaced by R→X (R = random assignment, shown as a box); U still points to Y but has no path to X; the former backdoor path is marked with an X and labeled "eliminated: X has no parents except R." Caption: "Randomization does not condition on U — it removes the arrow from U to X entirely."] -->
+![Randomization does not condition on U — it removes the arrow from U to X entirely.](images/11-treatments-fig-01.png)
+*Figure 11.1 — Two causal graphs side by side*
 
 ![Figure 11.1 — Two causal graphs side by side. Left graph (observational): node U (unmeasured confounder, shown as dashed circle) with arrows pointing to both X (treatment) and Y (outcome); X has an arrow to Y; the path X ← U → Y is highlighted in red and labeled "backdoor path: unblockable (U unmeasured)." Right graph (after randomization): the U→X arrow is replaced by R→X (R = random assignment, shown as a box); U still points to Y but has no path to X; the former backdoor path is marked with an X and labeled "eliminated: X has no parents except R." Caption: "Randomization does not condition on U](images/11-treatments-fig-01.jpg)
 
@@ -57,7 +58,8 @@ This is why the randomized trial answers the question $P(Y | do(X))$ directly, w
 
 The formal account has a practical implication: randomization is as strong as the physical implementation of the random assignment. If assignment is truly random — if there is no way for background characteristics to influence which group a subject ends up in — then the confounding structure is fully severed. If assignment is only approximately random, or if there is any possibility of selective compliance or dropout that correlates with background characteristics, the strength of the design is reduced.
 
-<!-- → [DIAGRAM: Two-panel correspondence diagram. Left panel (mathematical): the expression P(Y | do(X=1)) with annotation "set X by fiat; sever all incoming arrows." Right panel (physical): a flowchart — subjects enter → random number generator assigns group → treatment applied — with annotation "assignment mechanism severs any influence of subject characteristics on group membership." A horizontal double-headed arrow between the panels is labeled "the trial is the physical realization of the do-operator." Below both panels: a note reading "Strength of equivalence = strength of the physical randomization."] -->
+![Correspondence diagram](images/11-treatments-fig-02.png)
+*Figure 11.2 — Correspondence diagram*
 
 ![Figure 11.2 — Two-panel correspondence diagram. Left panel (mathematical): the expression P(Y | do(X=1)) with annotation "set X by fiat; sever all incoming arrows." Right panel (physical): a flowchart](images/11-treatments-fig-02.jpg)
 
@@ -119,7 +121,8 @@ Interference is not confined to infectious disease. It appears wherever units in
 
 In each case, the standard analysis — comparing treated to untreated units as if they were independent — produces an estimate that is biased toward zero. The true treatment effect is larger than estimated, because the comparison group has been partially treated by the spillover.
 
-<!-- → [DIAGRAM: Network diagram illustrating interference in a social spillover scenario. Nodes = individuals arranged in a social graph; edges = connections. Left panel (assignment): half the nodes are filled (treated) and half are open (control) — randomly assigned. Right panel (spillover): red arrows flow from treated nodes to adjacent control nodes; control nodes with many treated neighbors are shaded light red to indicate partial contamination. Two annotations: (1) "SUTVA requires: Y_i depends only on own treatment." (2) "Actual: Y_i depends on neighbors' treatment — control group is partially treated by spillover." Bottom annotation: "Estimated effect = true effect − spillover benefit to controls." Reader should see that SUTVA violation is a structural feature of the network, not a measurement error.] -->
+![Network diagram illustrating interference in a social spillover](images/11-treatments-fig-03.png)
+*Figure 11.3 — Network diagram illustrating interference in a social spillover*
 
 ![Figure 11.4 — Network diagram illustrating interference in a social spillover scenario. Nodes = individuals arranged in a social graph; edges = connections. Left panel (assignment): half the nodes are filled (treated) and half are open (control)](images/11-treatments-fig-04.jpg)
 
@@ -132,7 +135,8 @@ Hidden variations of treatment create heterogeneity in the treatment effect. If 
 
 The problem is compounded when the variation in implementation is correlated with other variables. Suppose experienced managers implement a training program well, and inexperienced managers implement it poorly. The treatment effect in experienced-manager teams is large; in inexperienced-manager teams, it is small. If we estimate a single average effect without accounting for this, we will misattribute the manager-experience effect to the training program itself. The "treatment" appears to work better in some settings than others — but the reason is not the treatment; it is who is delivering it.
 
-<!-- → [DIAGRAM: Side-by-side comparison of treatment variation in clinical vs. organizational settings. Left column (clinical trial): a single bottle labeled "Drug A, 10mg daily." Below it, a compliance bar chart — 90% full dose, 8% partial dose, 2% no dose. The variation is narrow and measurable. Right column (organizational training program): a single document labeled "Program X, 2-day workshop." Below it, an implementation quality bar chart across 12 instructors, rated 1–5 — wide variation from 1.5 to 4.8. The variation is wide and partially unmeasured. Caption: "What was assigned (top) vs. what was received (bottom). In organizational settings, the gap is structural." Both columns annotated with: "SUTVA requires: one version of treatment. Reality: many versions."] -->
+![What was assigned (top) vs. what was received (bottom). In organizational settings, the gap is structural.](images/11-treatments-fig-04.png)
+*Figure 11.4 — Comparison of treatment variation in clinical vs*
 
 ![Figure 11.5 — Side-by-side comparison of treatment variation in clinical vs. organizational settings. Left column (clinical trial): a single bottle labeled "Drug A, 10mg daily." Below it, a compliance bar chart](images/11-treatments-fig-05.jpg)
 
@@ -184,7 +188,8 @@ The cluster-randomized design also requires a choice about what to estimate. The
 
 Cluster randomization is the standard design for evaluation of community-level interventions: vaccines, sanitation programs, community health worker programs, and similar policies where the interference is defined by physical proximity or shared infrastructure. Duflo's work on deworming programs in Kenya used cluster randomization at the school level, because the transmission of intestinal worms happens within schools (students share the same soil) but not, primarily, across schools.
 
-<!-- → [DIAGRAM: Two-panel diagram contrasting individual and cluster randomization for a school deworming intervention. Left panel (individual randomization): three school outlines, each containing a mix of treated (filled circles) and control (open circles) children; red transmission arrows cross between treated and control children within each school — SUTVA violation annotated. Right panel (cluster randomization): three school outlines — two fully filled (treated schools) and one fully open (control school); transmission arrows are contained within each school and therefore within treatment status — SUTVA holds at school level. Below both panels: "Unit of randomization must match unit of interference." Annotation pointing to the cluster design: "Spillover is now contained within the treatment group — it affects the estimate of the cluster-level effect, not the between-cluster comparison."] -->
+![Diagram contrasting individual and cluster randomization for a](images/11-treatments-fig-05.png)
+*Figure 11.5 — Diagram contrasting individual and cluster randomization for a*
 
 ![Figure 11.7 — Two-panel diagram contrasting individual and cluster randomization for a school deworming intervention. Left panel (individual randomization): three school outlines, each containing a mix of treated (filled circles) and control (open circles) children; red transmission arrows cross between treated and control children within each school](images/11-treatments-fig-07.jpg)
 
@@ -199,7 +204,8 @@ The statistical method that exploits staggered rollouts is called difference-in-
 
 The validity of difference-in-differences rests on the parallel trends assumption: in the absence of treatment, treated and untreated units would have followed the same trend in outcomes. This assumption is not guaranteed by design — it has to be argued or tested. When the assumption holds, the staggered rollout produces estimates comparable to a randomized trial even though it is technically observational.
 
-<!-- → [CHART: Time-series line chart for a difference-in-differences illustration. X-axis: time periods, divided into pre-treatment and post-treatment by a vertical dashed line. Y-axis: outcome level. Two lines: solid line = treated unit; dashed line = not-yet-treated unit. Pre-period: both lines are parallel (parallel trends). Post-period: solid line rises (treatment effect); dashed line continues at the same slope. Annotations: (1) A bracket labeled "DiD estimator" spanning the gap between the treated unit's actual post-treatment level and its projected counterfactual trend (dashed line extended). (2) "Parallel trends assumption: what treated unit would have done without treatment = dashed line's slope." (3) "Assumption not guaranteed by design — must be argued or tested using pre-period data."] -->
+![Time-series line chart for a difference-in-differences illustration](images/11-treatments-fig-06.png)
+*Figure 11.6 — Time-series line chart for a difference-in-differences illustration*
 
 ![Figure 11.8 — Time-series line chart for a difference-in-differences illustration. X-axis: time periods, divided into pre-treatment and post-treatment by a vertical dashed line. Y-axis: outcome level. Two lines: solid line = treated unit; dashed line = not-yet-treated unit. Pre-period: both lines are parallel (parallel trends). Post-period: solid line rises (treatment effect); dashed line continues at the same slope. Annotations: (1) A bracket labeled "DiD estimator" spanning the gap between the treated unit's actual post-treatment level and its projected counterfactual trend (dashed line extended). (2) "Parallel trends assumption: what treated unit would have done without treatment = dashed line's slope." (3) "Assumption not guaranteed by design](images/11-treatments-fig-08.jpg)
 
@@ -214,7 +220,8 @@ This is exactly the instrumental variables design from Chapter 8, applied in the
 
 The encouragement design estimates the *local average treatment effect* (LATE) — the average effect for compliers specifically — not the average effect for the entire population. This is a genuine limitation: if compliers are not representative of the population of interest, the LATE may not be the number the decision-maker wants. The LATE is still a valid causal estimate, and it is often the best available estimate in settings where direct randomization is infeasible.
 
-<!-- → [DIAGRAM: 2×2 schematic of the encouragement design. Rows: Encouraged / Not Encouraged. Columns: Takes Treatment / Does Not Take Treatment. Four cells labeled: (Encouraged, Takes Treatment) = Compliers; (Encouraged, Does Not Take) = Never-takers; (Not Encouraged, Takes Treatment) = Always-takers; (Not Encouraged, Does Not Take) = Never-takers. Highlight the Complier cell. Annotations: (1) "LATE is estimated for compliers only — those whose treatment decision changes with encouragement." (2) "First stage: encouraged group has higher uptake rate than not-encouraged group — this difference is the instrument's strength." (3) "Exclusion restriction: encouragement affects outcome only through treatment, not directly." Mapping to Chapter 8 instrumental variables: "Encouragement = instrument; treatment = endogenous variable."] -->
+![2×2 schematic of the encouragement design](images/11-treatments-fig-07.png)
+*Figure 11.7 — 2×2 schematic of the encouragement design*
 
 ![Figure 11.9 — 2×2 schematic of the encouragement design. Rows: Encouraged / Not Encouraged. Columns: Takes Treatment / Does Not Take Treatment. Four cells labeled: (Encouraged, Takes Treatment) = Compliers; (Encouraged, Does Not Take) = Never-takers; (Not Encouraged, Takes Treatment) = Always-takers; (Not Encouraged, Does Not Take) = Never-takers. Highlight the Complier cell. Annotations: (1) "LATE is estimated for compliers only](images/11-treatments-fig-09.jpg)
 
@@ -273,7 +280,8 @@ The trial result tells you: under trial conditions, with this population, with t
 
 The Living Model architecture in Part Three formalizes this. A recommendation that emerges from the model does not just report the trial effect. It reports the trial effect, the deployment conditions assumed, the expected attenuation factors, and the uncertainty around the deployed effect. The recommendation is honest about what it does not know. What the trial established with confidence, and what the deployment projection required further assumptions to produce, are separated in the output.
 
-<!-- → [DIAGRAM: Horizontal deployment gap diagram. Left anchor: box labeled "Trial result: δ̂ (estimated effect under trial conditions)." Right anchor: box labeled "Deployed effect: δ_deploy (actual effect in production)." Between them: four labeled wedges opening downward (the gap factors), each annotated with the chapter concept that addresses it: (1) Condition gap → transportability (Ch. 8); (2) Population gap → transportability (Ch. 8); (3) Implementation gap → hidden variations of treatment (Concept 2, this chapter); (4) SUTVA gap → design alternatives (Concept 3, this chapter). Below each wedge: a one-line question the practitioner should ask (e.g., "Are trial site conditions reproducible?"; "Does the deployment population match the trial population?"; "Who is delivering the intervention in deployment?"; "Does the deployment context have more spillover than the trial?"). Caption: "The gap is not noise. It is a set of addressable questions."] -->
+![The gap is not noise. It is a set of addressable questions.](images/11-treatments-fig-08.png)
+*Figure 11.8 — Horizontal deployment gap diagram*
 
 ![Figure 11.11 — Horizontal deployment gap diagram. Left anchor: box labeled "Trial result: δ̂ (estimated effect under trial conditions)." Right anchor: box labeled "Deployed effect: δ_deploy (actual effect in production)." Between them: four labeled wedges opening downward (the gap factors), each annotated with the chapter concept that addresses it: (1) Condition gap → transportability (Ch. 8)](images/11-treatments-fig-11.jpg)
 
@@ -553,3 +561,76 @@ Who was Janet Lane-Claypon, and how do her early-twentieth-century cohort and ca
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 11.1 — Two causal graphs side by side
+
+Create a standalone D3 v7 HTML file for Figure Two causal graphs side by side. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two causal graphs side by side. Left graph (observational): node U (unmeasured confounder, shown as dashed circle) with arrows pointing to both X (treatment) and Y (outcome); X has an arrow to Y; the path X ← U → Y is highlighted in red and labeled "backdoor path: unblockable (U unmeasured)." Right graph (after randomization): the U→X arrow is replaced by R→X (R = random assignment, shown as a box); U still points to Y but has no path to X; the former backdoor path is marked with an X and labeled "eliminated: X has no parents except R." Caption: "Randomization does not condition on U — it removes the arrow from U to X entirely.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md c
+
+> Reference implementation: `d3/11-treatments-fig-01.html`
+
+---
+
+### Figure 11.2 — Correspondence diagram
+
+Create a standalone D3 v7 HTML file for Figure Correspondence diagram. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-panel correspondence diagram. Left panel (mathematical): the expression P(Y | do(X=1)) with annotation "set X by fiat; sever all incoming arrows." Right panel (physical): a flowchart — subjects enter → random number generator assigns group → treatment applied — with annotation "assignment mechanism severs any influence of subject characteristics on group membership." A horizontal double-headed arrow between the panels is labeled "the trial is the physical realization of the do-operator." Below both panels: a note reading "Strength of equivalence = strength of the physical randomization.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono fon
+
+> Reference implementation: `d3/11-treatments-fig-02.html`
+
+---
+
+### Figure 11.3 — Network diagram illustrating interference in a social spillover
+
+Create a standalone D3 v7 HTML file for Figure Network diagram illustrating interference in a social spillover. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Network diagram illustrating interference in a social spillover scenario. Nodes = individuals arranged in a social graph; edges = connections. Left panel (assignment): half the nodes are filled (treated) and half are open (control) — randomly assigned. Right panel (spillover): red arrows flow from treated nodes to adjacent control nodes; control nodes with many treated neighbors are shaded light red to indicate partial contamination. Two annotations: (1) "SUTVA requires: Y_i depends only on own treatment." (2) "Actual: Y_i depends on neighbors' treatment — control group is partially treated by spillover." Bottom annotation: "Estimated effect = true effect − spillover benefit to controls." Reader should see that SUTVA violation is a structural feature of the network, not a measurement error.. Use the described data shape and labels; when exact values are not supplied, use pla
+
+> Reference implementation: `d3/11-treatments-fig-03.html`
+
+---
+
+### Figure 11.4 — Comparison of treatment variation in clinical vs
+
+Create a standalone D3 v7 HTML file for Figure Comparison of treatment variation in clinical vs. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side comparison of treatment variation in clinical vs. organizational settings. Left column (clinical trial): a single bottle labeled "Drug A, 10mg daily." Below it, a compliance bar chart — 90% full dose, 8% partial dose, 2% no dose. The variation is narrow and measurable. Right column (organizational training program): a single document labeled "Program X, 2-day workshop." Below it, an implementation quality bar chart across 12 instructors, rated 1–5 — wide variation from 1.5 to 4.8. The variation is wide and partially unmeasured. Caption: "What was assigned (top) vs. what was received (bottom). In organizational settings, the gap is structural." Both columns annotated with: "SUTVA requires: one version of treatment. Reality: many versions.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationsh
+
+> Reference implementation: `d3/11-treatments-fig-04.html`
+
+---
+
+### Figure 11.5 — Diagram contrasting individual and cluster randomization for a
+
+Create a standalone D3 v7 HTML file for Figure Diagram contrasting individual and cluster randomization for a. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-panel diagram contrasting individual and cluster randomization for a school deworming intervention. Left panel (individual randomization): three school outlines, each containing a mix of treated (filled circles) and control (open circles) children; red transmission arrows cross between treated and control children within each school — SUTVA violation annotated. Right panel (cluster randomization): three school outlines — two fully filled (treated schools) and one fully open (control school); transmission arrows are contained within each school and therefore within treatment status — SUTVA holds at school level. Below both panels: "Unit of randomization must match unit of interference." Annotation pointing to the cluster design: "Spillover is now contained within the treatment group — it affects the estimate of the cluster-level effect, not the between-cluster comparison."
+
+> Reference implementation: `d3/11-treatments-fig-05.html`
+
+---
+
+### Figure 11.6 — Time-series line chart for a difference-in-differences illustration
+
+Create a standalone D3 v7 HTML file for Figure Time-series line chart for a difference-in-differences illustration. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Time-series line chart for a difference-in-differences illustration. X-axis: time periods, divided into pre-treatment and post-treatment by a vertical dashed line. Y-axis: outcome level. Two lines: solid line = treated unit; dashed line = not-yet-treated unit. Pre-period: both lines are parallel (parallel trends). Post-period: solid line rises (treatment effect); dashed line continues at the same slope. Annotations: (1) A bracket labeled "DiD estimator" spanning the gap between the treated unit's actual post-treatment level and its projected counterfactual trend (dashed line extended). (2) "Parallel trends assumption: what treated unit would have done without treatment = dashed line's slope." (3) "Assumption not guaranteed by design — must be argued or tested using pre-period data.". Use the described data shape and labels; when exact values are not supplied, use plausib
+
+> Reference implementation: `d3/11-treatments-fig-06.html`
+
+---
+
+### Figure 11.7 — 2×2 schematic of the encouragement design
+
+Create a standalone D3 v7 HTML file for Figure 2×2 schematic of the encouragement design. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: 2×2 schematic of the encouragement design. Rows: Encouraged / Not Encouraged. Columns: Takes Treatment / Does Not Take Treatment. Four cells labeled: (Encouraged, Takes Treatment) = Compliers; (Encouraged, Does Not Take) = Never-takers; (Not Encouraged, Takes Treatment) = Always-takers; (Not Encouraged, Does Not Take) = Never-takers. Highlight the Complier cell. Annotations: (1) "LATE is estimated for compliers only — those whose treatment decision changes with encouragement." (2) "First stage: encouraged group has higher uptake rate than not-encouraged group — this difference is the instrument's strength." (3) "Exclusion restriction: encouragement affects outcome only through treatment, not directly." Mapping to Chapter 8 instrumental variables: "Encouragement = instrument; treatment = endogenous variable.". Use the described data shape and labels; when exact values are not supplied, use plausib
+
+> Reference implementation: `d3/11-treatments-fig-07.html`
+
+---
+
+### Figure 11.8 — Horizontal deployment gap diagram
+
+Create a standalone D3 v7 HTML file for Figure Horizontal deployment gap diagram. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Horizontal deployment gap diagram. Left anchor: box labeled "Trial result: δ̂ (estimated effect under trial conditions)." Right anchor: box labeled "Deployed effect: δ_deploy (actual effect in production)." Between them: four labeled wedges opening downward (the gap factors), each annotated with the chapter concept that addresses it: (1) Condition gap → transportability (Ch. 8); (2) Population gap → transportability (Ch. 8); (3) Implementation gap → hidden variations of treatment (Concept 2, this chapter); (4) SUTVA gap → design alternatives (Concept 3, this chapter). Below each wedge: a one-line question the practitioner should ask (e.g., "Are trial site conditions reproducible?"; "Does the deployment population match the trial population?"; "Who is delivering the intervention in deployment?"; "Does the deployment context have more spillover than the trial?"). Caption: "The gap is not noise. It is a set
+
+> Reference implementation: `d3/11-treatments-fig-08.html`

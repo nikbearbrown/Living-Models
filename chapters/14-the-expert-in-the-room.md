@@ -32,7 +32,8 @@ What emerged at the end of twelve weeks was a Bayesian network with about thirty
 
 Twelve weeks. Six experts. One model. No machine learning. No big data. The output was a working representation of how a complex ecological system actually functions, capable of supporting consequential decisions about how to manage it.
 
-<!-- → [IMAGE: Map of the Goulburn-Broken Catchment in Victoria, Australia — river system, key towns, and watershed boundary marked. Adjacent to the map: a simplified schematic of the resulting Bayesian network (~15 of the ~30 nodes shown, with directed edges), overlaid with three example management intervention arrows pointing into key nodes (flow_regime, riparian_vegetation, invasive_species). Caption: "From geography to causal graph: the catchment team's output in schematic form. Each arrow represents a structural commitment the data alone could not have made." Reader should see the connection between the physical system and the model structure.] -->
+![From geography to causal graph: the catchment team's output in schematic form. Each arrow represents a structural commitment the data alone could not have made.](images/14-the-expert-in-the-room-fig-01.png)
+*Figure 14.1 — Map of the Goulburn-Broken Catchment in Victoria, Australia*
 
 ![Figure 14.1 — Map of the Goulburn-Broken Catchment in Victoria, Australia](images/14-the-expert-in-the-room-fig-01.jpg)
 
@@ -51,7 +52,8 @@ When I described this in Chapter 7, I treated the equivalence class as manageabl
 
 Recent theoretical results establish that for *sparse random graphs* — the kind that describe most real systems, where each node connects to a small number of others — the size of the Markov equivalence class scales exponentially with the number of variables. For a graph of twenty variables, the equivalence class can contain thousands of diagrams. For fifty variables, the number is astronomical. The data do not tell you which diagram is right; they tell you only that one of them is, and that the algorithm cannot determine which.
 
-<!-- → [CHART: Log-scale line chart. X-axis: number of variables (5 to 50, in steps of 5). Y-axis: size of Markov equivalence class (logarithmic scale, from 1 to 10^10). The curve rises sharply from left, becoming nearly vertical around n=25–30. Two annotated reference points: (1) at n=20: "Equivalence class contains thousands of diagrams"; (2) at n=50: "Effectively incomputable." A horizontal dashed line near the bottom labeled "Practically resolvable by data alone" — the curve crosses it around n=8–10. Caption: "The equivalence-class explosion is the rule, not the exception. Every realistic organizational system sits in the steep part of this curve."] -->
+![The equivalence-class explosion is the rule, not the exception. Every realistic organizational system sits in the steep part of this curve.](images/14-the-expert-in-the-room-fig-02.png)
+*Figure 14.2 — Log-scale line chart*
 
 ![Figure 14.2 — Log-scale line chart. X-axis: number of variables (5 to 50, in steps of 5). Y-axis: size of Markov equivalence class (logarithmic scale, from 1 to 10^10). The curve rises sharply from left, becoming nearly vertical around n=25–30. Two annotated reference points: (1) at n=20: "Equivalence class contains thousands of diagrams"; (2) at n=50: "Effectively incomputable." A horizontal dashed line near the bottom labeled "Practically resolvable by data alone"](images/14-the-expert-in-the-room-fig-02.jpg)
 
@@ -68,7 +70,8 @@ The remaining source is the expert. Specifically, what the expert supplies is me
 
 This is the precise sense in which the expert is mathematically necessary. The expert is not a convenience that supplements an otherwise complete data-driven workflow. The expert is the source of information without which the workflow cannot, in principle, produce a unique causal structure.
 
-<!-- → [DIAGRAM: Two-panel illustration. Left panel: three structurally distinct DAGs — (A) X→Y, (B) Y→X, (C) X←Z→Y — each with the same conditional independence table shown beneath it. A label spanning all three: "Observational data: equally consistent with all three." Right panel: the same three DAGs, with DAG (A) X→Y highlighted and a callout labeled "Expert's mechanistic knowledge: 'X precedes Y by 6 months; mechanism passes through receptor class R; blocking R eliminates the correlation.'" The callout arrow points only to the highlighted DAG. Caption: "The data are equally consistent with all three structures. The expert's structural knowledge is consistent with exactly one." Reader should see that the expert is resolving a mathematical ambiguity — not improving an estimate, but eliminating structurally distinct alternatives.] -->
+![The data are equally consistent with all three structures. The expert's structural knowledge is consistent with exactly one.](images/14-the-expert-in-the-room-fig-03.png)
+*Figure 14.3 — Illustration*
 
 ![Figure 14.3 — Two-panel illustration. Left panel: three structurally distinct DAGs](images/14-the-expert-in-the-room-fig-03.jpg)
 
@@ -95,7 +98,8 @@ The second is *linguistic ambiguity*. Experts use the same term for different qu
 
 The third is the *recognition-explanation gap*. Experts often know that a relationship exists without being able to articulate why. The Bayesian network requires not just the relationship but the structure that produced it: not "I know X and Y are connected" but "X causes Y through mechanism M, with strength conditional on Z." Experts who can make accurate predictions cannot always reconstruct the causal pathway behind the prediction. The elicitation has to navigate this without forcing the expert to invent a story she does not actually believe.
 
-<!-- → [DIAGRAM: Funnel diagram of the knowledge bottleneck. Top (wide end): "Expert's implicit knowledge" — four icons labeled "Compiled heuristics," "Pattern recognition," "Tacit understanding," "Decades of experience." Middle (narrow neck): three labeled obstacles stacked vertically — (1) "Combinatorial explosion of CPTs," (2) "Linguistic ambiguity," (3) "Recognition-explanation gap." Bottom (output, narrow): "Explicit structured knowledge" — icons labeled "Variables," "Directed edges," "Conditional probabilities." Large annotation spanning the neck: "The bottleneck is not a failure of expertise. It is a structural mismatch between how knowledge is stored in human memory and how Bayesian networks represent it." Reader should see that all three obstacles are structural, not intellectual — they affect expert experts.] -->
+![Funnel diagram of the knowledge bottleneck](images/14-the-expert-in-the-room-fig-04.png)
+*Figure 14.4 — Funnel diagram of the knowledge bottleneck*
 
 ![Figure 14.4 — Funnel diagram of the knowledge bottleneck. Top (wide end): "Expert's implicit knowledge"](images/14-the-expert-in-the-room-fig-04.jpg)
 
@@ -218,7 +222,8 @@ Calibration exercises address this before the substantive elicitation begins. Th
 
 For the substantive elicitation itself, the discipline asks for ranges rather than point estimates: *the true probability is between 0.2 and 0.4 with 80% confidence*. This allows the model to represent epistemic uncertainty — the expert's uncertainty about the probability itself — rather than treating elicited probabilities as facts. The resulting model has a richer uncertainty representation than a model whose inputs are point estimates, and it is more honest about what is and is not known.
 
-<!-- → [CHART: Calibration chart for two hypothetical experts. X-axis: stated confidence level (50%, 60%, 70%, 80%, 90%). Y-axis: actual coverage rate (proportion of intervals that contained the true answer). A diagonal line labeled "Perfect calibration." Expert A's curve bows below the diagonal — labeled "Overconfident: claims 80% confidence but only 55% of intervals contain the true answer." Expert B's curve bows above the diagonal — labeled "Underconfident: claims 80% confidence but 95% of intervals contain the true answer." Annotation: "Calibration exercises detect and correct these systematic biases before they enter the model." Reader should understand what miscalibration looks like and why it matters for the model's uncertainty representation.] -->
+![Calibration chart for two hypothetical experts](images/14-the-expert-in-the-room-fig-05.png)
+*Figure 14.5 — Calibration chart for two hypothetical experts*
 
 ![Figure 14.7 — Calibration chart for two hypothetical experts. X-axis: stated confidence level (50%, 60%, 70%, 80%, 90%). Y-axis: actual coverage rate (proportion of intervals that contained the true answer). A diagonal line labeled "Perfect calibration." Expert A's curve bows below the diagonal](images/14-the-expert-in-the-room-fig-07.jpg)
 
@@ -239,7 +244,8 @@ The principal cognitive hazard Delphi targets is *committee dynamics* — the te
 
 Delphi has a known failure mode: it can suppress legitimate dissent. An expert who is correct but in the minority will see her estimate surrounded by contrary estimates and may revise toward the group even though the group is wrong. The protocol is designed to allow outliers to hold their positions — nothing forces revision — but the social pressure of seeing the distribution can be considerable, even anonymously. When the dissenting expert is right because she has access to specific information the others lack, Delphi may not surface that information efficiently.
 
-<!-- → [DIAGRAM: Flow diagram of the Delphi method. Round 1: five expert icons → five private probability distributions (different shapes, indicating genuine disagreement) → aggregation box → combined distribution returned. Anonymization label on return arrow: "No expert sees individual estimates — only aggregate." Round 2: each expert icon receives the aggregate; three revise toward the center of the distribution; one holds position (labeled "Outlier holds — may have unique information"); one moves slightly. Final aggregation box → panel estimate. Annotation: "Committee dynamics suppressed by anonymity. Legitimate dissent protected by the right to hold position." Caption: "Delphi: optimal when social pressure is the primary threat to estimate quality."] -->
+![Delphi: optimal when social pressure is the primary threat to estimate quality.](images/14-the-expert-in-the-room-fig-06.png)
+*Figure 14.6 — Flow diagram of the Delphi method*
 
 ![Figure 14.8 — Flow diagram of the Delphi method. Round 1: five expert icons → five private probability distributions (different shapes, indicating genuine disagreement) → aggregation box → combined distribution returned. Anonymization label on return arrow: "No expert sees individual estimates](images/14-the-expert-in-the-room-fig-08.jpg)
 
@@ -260,7 +266,8 @@ IDEA targets the specific failure mode where the answer is known by one expert b
 
 The cost of IDEA relative to Delphi is primarily logistical: the structured discussion requires all experts to be present simultaneously, which Delphi does not. For geographically dispersed panels, or for elicitations that run over multiple weeks, Delphi's asynchronous structure is more practical.
 
-<!-- → [DIAGRAM: Four-phase flow diagram of the IDEA protocol. Phase 1 (Investigate): five expert icons shown separately with "research" icon — label "Independent preparation: no interaction." Phase 2 (Discuss): five experts shown in a group session with facilitator icon; four speech bubbles containing reasoning statements: "I'm relying on data from X...," "The key mechanism I see is...," "I disagree because Y shows...," "My assumption is..."; facilitator label "Moderated: all voices heard, no consensus forced." Phase 3 (Estimate): experts separated again, each providing a private distribution — label "Private estimation after public reasoning." Phase 4 (Aggregate): mathematical combination. Bottom comparison box: "IDEA vs. Delphi — IDEA: synchronous, surfaces reasoning, better when information is siloed. Delphi: asynchronous, anonymizes estimates, better when social pressure is the risk."] -->
+![Four-phase flow diagram of the IDEA protocol](images/14-the-expert-in-the-room-fig-07.png)
+*Figure 14.7 — Four-phase flow diagram of the IDEA protocol*
 
 ![Figure 14.9 — Four-phase flow diagram of the IDEA protocol. Phase 1 (Investigate): five expert icons shown separately with "research" icon](images/14-the-expert-in-the-room-fig-09.jpg)
 
@@ -326,7 +333,8 @@ Better algorithms help with the computational challenge of searching over the eq
 
 The only things that shrink the equivalence class are intervention (which changes the data-generating process) and expert knowledge (which provides structural information not present in the observational data). Neither of these is a data or algorithm problem. Both require a different kind of architectural investment — in experimental design, in the case of intervention, and in expert elicitation, in the case of knowledge. The Living Model architecture invests in both, and in integrating them with the data-driven components that are genuinely valuable.
 
-<!-- → [DIAGRAM: Two-column diagram labeled "What more data / better algorithms resolve" vs. "What they do not resolve." Left column (green): "Parametric uncertainty — strength of known relationships" / "Statistical power — confidence in detected edges" / "Computational feasibility — speed of equivalence class search." Right column (red): "Structural uncertainty — which member of the equivalence class is true" / "Missing mechanistic knowledge — direction of edges between Markov-equivalent alternatives" / "The equivalence class itself — more data does not shrink it." Bottom annotation: "The boardroom gap is in the right column. Data investment addresses the left column. Expert elicitation and intervention address the right." Reader should use this diagram to rebut the common claim that more data will eventually solve the structural identification problem.] -->
+![Two-column diagram labeled "What more data / better](images/14-the-expert-in-the-room-fig-08.png)
+*Figure 14.8 — Two-column diagram labeled "What more data / better*
 
 ![Figure 14.11 — Two-column diagram labeled "What more data / better algorithms resolve" vs. "What they do not resolve." Left column (green): "Parametric uncertainty](images/14-the-expert-in-the-room-fig-11.jpg)
 
@@ -606,3 +614,76 @@ Who was Michael Polanyi, and how does his concept of *tacit knowledge* — the c
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 14.1 — Map of the Goulburn-Broken Catchment in Victoria, Australia
+
+Create a standalone D3 v7 HTML file for Figure Map of the Goulburn-Broken Catchment in Victoria, Australia. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Map of the Goulburn-Broken Catchment in Victoria, Australia — river system, key towns, and watershed boundary marked. Adjacent to the map: a simplified schematic of the resulting Bayesian network (~15 of the ~30 nodes shown, with directed edges), overlaid with three example management intervention arrows pointing into key nodes (flow_regime, riparian_vegetation, invasive_species). Caption: "From geography to causal graph: the catchment team's output in schematic form. Each arrow represents a structural commitment the data alone could not have made." Reader should see the connection between the physical system and the model structure.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named 
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-01.html`
+
+---
+
+### Figure 14.2 — Log-scale line chart
+
+Create a standalone D3 v7 HTML file for Figure Log-scale line chart. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Log-scale line chart. X-axis: number of variables (5 to 50, in steps of 5). Y-axis: size of Markov equivalence class (logarithmic scale, from 1 to 10^10). The curve rises sharply from left, becoming nearly vertical around n=25–30. Two annotated reference points: (1) at n=20: "Equivalence class contains thousands of diagrams"; (2) at n=50: "Effectively incomputable." A horizontal dashed line near the bottom labeled "Practically resolvable by data alone" — the curve crosses it around n=8–10. Caption: "The equivalence-class explosion is the rule, not the exception. Every realistic organizational system sits in the steep part of this curve.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md co
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-02.html`
+
+---
+
+### Figure 14.3 — Illustration
+
+Create a standalone D3 v7 HTML file for Figure Illustration. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-panel illustration. Left panel: three structurally distinct DAGs — (A) X→Y, (B) Y→X, (C) X←Z→Y — each with the same conditional independence table shown beneath it. A label spanning all three: "Observational data: equally consistent with all three." Right panel: the same three DAGs, with DAG (A) X→Y highlighted and a callout labeled "Expert's mechanistic knowledge: 'X precedes Y by 6 months; mechanism passes through receptor class R; blocking R eliminates the correlation.'" The callout arrow points only to the highlighted DAG. Caption: "The data are equally consistent with all three structures. The expert's structural knowledge is consistent with exactly one." Reader should see that the expert is resolving a mathematical ambiguity — not improving an estimate, but eliminating structurally distinct alternatives.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values 
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-03.html`
+
+---
+
+### Figure 14.4 — Funnel diagram of the knowledge bottleneck
+
+Create a standalone D3 v7 HTML file for Figure Funnel diagram of the knowledge bottleneck. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Funnel diagram of the knowledge bottleneck. Top (wide end): "Expert's implicit knowledge" — four icons labeled "Compiled heuristics," "Pattern recognition," "Tacit understanding," "Decades of experience." Middle (narrow neck): three labeled obstacles stacked vertically — (1) "Combinatorial explosion of CPTs," (2) "Linguistic ambiguity," (3) "Recognition-explanation gap." Bottom (output, narrow): "Explicit structured knowledge" — icons labeled "Variables," "Directed edges," "Conditional probabilities." Large annotation spanning the neck: "The bottleneck is not a failure of expertise. It is a structural mismatch between how knowledge is stored in human memory and how Bayesian networks represent it." Reader should see that all three obstacles are structural, not intellectual — they affect expert experts.. Use the described data shape and labels; when exact values are not supplied, use plausible ill
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-04.html`
+
+---
+
+### Figure 14.5 — Calibration chart for two hypothetical experts
+
+Create a standalone D3 v7 HTML file for Figure Calibration chart for two hypothetical experts. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Calibration chart for two hypothetical experts. X-axis: stated confidence level (50%, 60%, 70%, 80%, 90%). Y-axis: actual coverage rate (proportion of intervals that contained the true answer). A diagonal line labeled "Perfect calibration." Expert A's curve bows below the diagonal — labeled "Overconfident: claims 80% confidence but only 55% of intervals contain the true answer." Expert B's curve bows above the diagonal — labeled "Underconfident: claims 80% confidence but 95% of intervals contain the true answer." Annotation: "Calibration exercises detect and correct these systematic biases before they enter the model." Reader should understand what miscalibration looks like and why it matters for the model's uncertainty representation.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. 
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-05.html`
+
+---
+
+### Figure 14.6 — Flow diagram of the Delphi method
+
+Create a standalone D3 v7 HTML file for Figure Flow diagram of the Delphi method. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Flow diagram of the Delphi method. Round 1: five expert icons → five private probability distributions (different shapes, indicating genuine disagreement) → aggregation box → combined distribution returned. Anonymization label on return arrow: "No expert sees individual estimates — only aggregate." Round 2: each expert icon receives the aggregate; three revise toward the center of the distribution; one holds position (labeled "Outlier holds — may have unique information"); one moves slightly. Final aggregation box → panel estimate. Annotation: "Committee dynamics suppressed by anonymity. Legitimate dissent protected by the right to hold position." Caption: "Delphi: optimal when social pressure is the primary threat to estimate quality.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero b
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-06.html`
+
+---
+
+### Figure 14.7 — Four-phase flow diagram of the IDEA protocol
+
+Create a standalone D3 v7 HTML file for Figure Four-phase flow diagram of the IDEA protocol. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-phase flow diagram of the IDEA protocol. Phase 1 (Investigate): five expert icons shown separately with "research" icon — label "Independent preparation: no interaction." Phase 2 (Discuss): five experts shown in a group session with facilitator icon; four speech bubbles containing reasoning statements: "I'm relying on data from X...," "The key mechanism I see is...," "I disagree because Y shows...," "My assumption is..."; facilitator label "Moderated: all voices heard, no consensus forced." Phase 3 (Estimate): experts separated again, each providing a private distribution — label "Private estimation after public reasoning." Phase 4 (Aggregate): mathematical combination. Bottom comparison box: "IDEA vs. Delphi — IDEA: synchronous, surfaces reasoning, better when information is siloed. Delphi: asynchronous, anonymizes estimates, better when social pressure is the risk.". Use the described d
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-07.html`
+
+---
+
+### Figure 14.8 — Two-column diagram labeled "What more data / better
+
+Create a standalone D3 v7 HTML file for Figure Two-column diagram labeled "What more data / better. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-column diagram labeled "What more data / better algorithms resolve" vs. "What they do not resolve." Left column (green): "Parametric uncertainty — strength of known relationships" / "Statistical power — confidence in detected edges" / "Computational feasibility — speed of equivalence class search." Right column (red): "Structural uncertainty — which member of the equivalence class is true" / "Missing mechanistic knowledge — direction of edges between Markov-equivalent alternatives" / "The equivalence class itself — more data does not shrink it." Bottom annotation: "The boardroom gap is in the right column. Data investment addresses the left column. Expert elicitation and intervention address the right." Reader should use this diagram to rebut the common claim that more data will eventually solve the structural identification problem.. Use the described data shape and labels; when ex
+
+> Reference implementation: `d3/14-the-expert-in-the-room-fig-08.html`

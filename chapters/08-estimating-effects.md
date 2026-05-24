@@ -24,7 +24,8 @@ If a deconfounding set $Z$ exists, the causal effect of $X$ on $Y$ can be estima
 
 Now apply this to the pricing problem. Suppose the diagram has the following structure: customer characteristics — industry, company size — influence both the price the customer is offered (because the sales team gives discounts to certain industries and sizes) and the customer's renewal probability (because some industries are stickier than others). Engagement metrics are mediators — they are downstream of price and upstream of renewal. The diagram has a backdoor path: price ← customer characteristics → renewal. This path can be blocked by adjusting for customer characteristics. Engagement should *not* be adjusted for, because it is a mediator on the causal pathway from price to renewal; adjusting for it would partially close the very effect we are trying to estimate.
 
-<!-- → [DIAGRAM: Pricing causal diagram — nodes: Customer Characteristics (C), Price (P), Engagement (E), Renewal (R); arrows: C → P, C → R, P → E, E → R, P → R (direct); a red-highlighted path showing the backdoor path C → P and C → R; a label "block this" pointing to C with a box around it; a label "do NOT condition on this" pointing to E; caption: "The backdoor criterion identifies what to adjust for and what to leave alone"] -->
+![The backdoor criterion identifies what to adjust for and what to leave alone](images/08-estimating-effects-fig-01.png)
+*Figure 8.1 — Pricing causal diagram *
 
 ![Figure 8.1 — Pricing causal diagram](images/08-estimating-effects-fig-01.jpg)
 
@@ -78,7 +79,8 @@ The method has two important properties. First, it allows arbitrarily flexible m
 
 Double machine learning is one of the workhorses of modern causal inference in practice. It enables credible causal estimation in high-dimensional settings where ordinary regression fails. It is, however, only as good as the deconfounding set it adjusts for. If the diagram is wrong — if there is an unmeasured confounder — DML will produce a precise estimate of the wrong quantity, with the same false confidence as any other method.
 
-<!-- → [DIAGRAM: DML procedure as a three-step flow — left box: "Regress X on Z using ML → residual X̃"; middle box: "Regress Y on Z using ML → residual Ỹ"; right box: "Regress Ỹ on X̃ → causal effect τ̂"; arrows between boxes; below the flow, a note: "Z is determined by the causal diagram (backdoor criterion), not by the ML step"; caption: "DML separates the structural question (which Z to adjust for) from the statistical question (how to adjust for high-dimensional Z)"] -->
+![DML separates the structural question (which Z to adjust for) from the statistical question (how to adjust for high-dimensional Z)](images/08-estimating-effects-fig-03.png)
+*Figure 8.3 — DML procedure as a three-step flow *
 
 ![Figure 8.3 — DML procedure as a three-step flow](images/08-estimating-effects-fig-03.jpg)
 
@@ -113,7 +115,8 @@ The heterogeneous causal effect tells a different story. The enterprise segment 
 
 The average effect would have led to a worse decision than the heterogeneous effect. This is the rule, not the exception. Average effects are useful for population-level reasoning — what will overall renewal rates do? — but they are not what most decisions require. Decisions require knowing which subpopulations respond which way, which is exactly what the HTE provides.
 
-<!-- → [CHART: Heterogeneous treatment effect — a distribution plot or two-panel bar chart; left panel shows the average effect (−10.5%) as a single bar; right panel shows the CATE by segment: enterprise at 0%, small business at −15%, with segment sizes shown; a third element showing the resulting decision: "raise for enterprise, grandfather small business"; caption: "The average hides the segmentation that makes the decision tractable"] -->
+![The average hides the segmentation that makes the decision tractable](images/08-estimating-effects-fig-04.png)
+*Figure 8.4 — Heterogeneous treatment effect *
 
 ![Figure 8.4 — Heterogeneous treatment effect](images/08-estimating-effects-fig-04.jpg)
 
@@ -287,3 +290,36 @@ Who was Gertrude Cox, and how does her work on experimental design and statistic
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 8.1 — Pricing causal diagram 
+
+Create a standalone D3 v7 HTML file for Figure Pricing causal diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Pricing causal diagram — nodes: Customer Characteristics (C), Price (P), Engagement (E), Renewal (R); arrows: C → P, C → R, P → E, E → R, P → R (direct); a red-highlighted path showing the backdoor path C → P and C → R; a label "block this" pointing to C with a box around it; a label "do NOT condition on this" pointing to E; caption: "The backdoor criterion identifies what to adjust for and what to leave alone". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-estimating-effects-fig-01.html`
+
+---
+
+### Figure 8.3 — DML procedure as a three-step flow 
+
+Create a standalone D3 v7 HTML file for Figure DML procedure as a three-step flow . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: DML procedure as a three-step flow — left box: "Regress X on Z using ML → residual X̃"; middle box: "Regress Y on Z using ML → residual Ỹ"; right box: "Regress Ỹ on X̃ → causal effect τ̂"; arrows between boxes; below the flow, a note: "Z is determined by the causal diagram (backdoor criterion), not by the ML step"; caption: "DML separates the structural question (which Z to adjust for) from the statistical question (how to adjust for high-dimensional Z)". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-estimating-effects-fig-03.html`
+
+---
+
+### Figure 8.4 — Heterogeneous treatment effect 
+
+Create a standalone D3 v7 HTML file for Figure Heterogeneous treatment effect . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Heterogeneous treatment effect — a distribution plot or two-panel bar chart; left panel shows the average effect (−10.5%) as a single bar; right panel shows the CATE by segment: enterprise at 0%, small business at −15%, with segment sizes shown; a third element showing the resulting decision: "raise for enterprise, grandfather small business"; caption: "The average hides the segmentation that makes the decision tractable". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-estimating-effects-fig-04.html`

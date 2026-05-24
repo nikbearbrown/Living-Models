@@ -147,7 +147,8 @@ If assumptions are stated generically — *the model has limitations* — the ex
 
 If too many assumptions are listed, the executive's attention is diluted across a list that includes trivially important items alongside critically important ones. The discipline of sensitivity ranking is what ensures that the items she reads are the ones that matter.
 
-<!-- → [CHART: Tornado chart for the pricing recommendation's assumption sensitivity. Horizontal bar chart. Y-axis: five assumptions listed in descending order of bar length (descending sensitivity): (1) "Customer response lag (assumed: 4 wks)" — bar extends left to -$4.1M; (2) "Price-churn correlation (assumed: uncorrelated)" — bar extends left to -$2.7M; (3) "Competitive response timing" — bar extends left to -$1.4M; (4) "EU regulatory environment" — shorter bar, -$0.6M; (5) "FX rate volatility" — shortest bar, -$0.3M. X-axis: Change in projected annual revenue ($M). Each bar annotated with the perturbed value tested (e.g., "tested: 8 weeks"). Callout: "The top two bars deserve the executive's attention. The bottom three are noted but not monitored."] -->
+![Tornado chart for the pricing recommendation's assumption sensitivity](images/19-the-causal-brain-executive-report-fig-01.png)
+*Figure 19.1 — Tornado chart for the pricing recommendation's assumption sensitivity*
 
 ![Figure 19.3 — Tornado chart for the pricing recommendation's assumption sensitivity. Horizontal bar chart. Y-axis: five assumptions listed in descending order of bar length (descending sensitivity): (1) "Customer response lag (assumed: 4 wks)"](images/19-the-causal-brain-executive-report-fig-03.jpg)
 
@@ -164,7 +165,8 @@ The counterfactual is also the answer to the implicit question behind every reco
 
 If the counterfactual is absent, the recommendation has no falsifiable commitment and no quantified urgency. The executive can defer indefinitely without knowing what deferral costs her. In aggregate, across hundreds of recommendations, deferral is the dominant failure mode of analytical systems — not wrong recommendations, but correct recommendations that are never acted on because the cost of inaction is invisible.
 
-<!-- → [CHART: Two-panel counterfactual chart for the pricing recommendation. Left panel — trajectory chart: X-axis: time (today to 18 months). Y-axis: cumulative revenue impact ($M). Three lines with shaded confidence bands: (1) solid line — "Recommended action" curving upward with narrow band; (2) dashed line — "Inaction" flat or slightly declining with medium band; (3) dotted line — "Second-ranked alternative" between the two with band. Gap between line 1 and line 2 at the 12-month mark is shaded light green and labeled "Cost of inaction: $3.1M/quarter." Right panel — summary box: "Cost of one quarter's delay: $3.1M (CI: $1.8M–$4.5M). Cost of choosing second-ranked alternative over recommendation: $1.4M. Next optimal decision window: Q2 earnings cycle." Caption: "The counterfactual makes deferral expensive rather than invisible."] -->
+![The counterfactual makes deferral expensive rather than invisible.](images/19-the-causal-brain-executive-report-fig-02.png)
+*Figure 19.2 — Counterfactual chart for the pricing recommendation*
 
 ![Figure 19.4 — Two-panel counterfactual chart for the pricing recommendation. Left panel](images/19-the-causal-brain-executive-report-fig-04.jpg)
 
@@ -320,7 +322,8 @@ The executive who reads only the chart — which many executives will — will d
 
 The specific form matters. Wide shaded bands that span two-thirds of the chart may communicate the right level of uncertainty while making the chart unreadable. The design challenge is to communicate the confidence interval clearly without making the uncertainty so visually prominent that it crowds out the recommendation. The solution is typically to use a narrow shaded band for the central interval (50% CI, which is tight and readable) alongside a lighter shaded band for the outer interval (90% CI, which shows the range of plausible outcomes). The two-band convention is legible and honest.
 
-<!-- → [IMAGE: Mock-up of the complete two-page executive report layout for the pricing recommendation. Page 1: top box — "RECOMMENDATION" header, then the specific action text, named owner, and a two-row table of projected effects (Revenue impact: $12M, CI: $7M–$17M; Churn impact: +1.4 pp, CI: +0.8–+2.1 pp). Below the box: a trajectory chart (recommended vs. inaction vs. second-ranked alternative, with two-band confidence shading and labeled cost-of-inaction gap). Page 2: three-section horizontal layout. Left third — "EVIDENCE" header, three-row variable table with confidence indicators. Middle third — "ASSUMPTIONS" header, tornado chart with top five bars. Right third — "COUNTERFACTUAL" header, summary box with cost-of-waiting number and comparison to second-ranked alternative, plus sign-off field (Decision owner / Action taken / Date / Deviation). Caption: "The two-page format is the minimum viable structure. Every element serves a specific decision-support function; nothing is decorative." Reader should use this as a production template.] -->
+![The two-page format is the minimum viable structure. Every element serves a specific decision-support function; nothing is decorative.](images/19-the-causal-brain-executive-report-fig-03.png)
+*Figure 19.3 — Mock-up of the complete two-page executive report layout*
 
 ![Figure 19.6 — Mock-up of the complete two-page executive report layout for the pricing recommendation. Page 1: top box](images/19-the-causal-brain-executive-report-fig-06.jpg)
 
@@ -365,7 +368,8 @@ The record protects her in cases where the recommendation was sound and the worl
 
 This means, concretely, that every Living Model report must be retained with full provenance for the relevant accountability horizon. In regulated industries, the horizon is set by regulation. In unregulated settings, the horizon should be set by the longest plausible review window — typically several years. The reports should be queryable by date, by recommendation, by domain, and by owner. When a board member asks five years later why the company chose to do X, the answer should be retrievable in seconds.
 
-<!-- → [DIAGRAM: Accountability flow diagram. Three main nodes arranged horizontally: (1) "Model Team" box — listed responsibilities: recommendation reflects EV ranking; evidence is honest; assumptions surfaced with magnitudes; counterfactual provided; narration grounded and traced. (2) "Report" box — attributes: timestamped, provenance-tracked, retained, queryable. (3) "Named Executive Owner" box — listed responsibilities: read the report; act on recommendation or document deviation; monitor flagged assumptions; sign off with name and date. Solid arrows: Model Team → Report (produces), Report → Named Owner (informs), Named Owner → Decision (makes). Dotted accountability arrows going backward: Decision → Model Team (answerable if report was misleading), Decision → Named Owner (answerable for the choice). Central annotation below the flow: "The audit record is the document on which accountability rests. It is not a postmortem artifact — it is produced at the time the recommendation is made." Caption: "Accountability is distributed but traceable. The record makes both forms tractable."] -->
+![Accountability is distributed but traceable. The record makes both forms tractable.](images/19-the-causal-brain-executive-report-fig-04.png)
+*Figure 19.4 — Accountability flow diagram*
 
 ![Figure 19.7 — Accountability flow diagram. Three main nodes arranged horizontally: (1) "Model Team" box](images/19-the-causal-brain-executive-report-fig-07.jpg)
 
@@ -388,7 +392,8 @@ The integration test is this: could the report survive a board review eighteen m
 
 If the answer to all of these is yes, the report is doing its job. If any of the answers is no, the architecture has a gap in one of its layers.
 
-<!-- → [DIAGRAM: Four-layer architecture diagram for the executive report, shown as a vertical stack. Bottom layer: "Accountability Framework (Governance)" — converts report from communication artifact to decision artifact; produces audit record; enables board review. Second layer: "Visualization Discipline (Interface)" — decision-focused charts with mandatory uncertainty; no DAG in report; executive reads charts first. Third layer: "Narration Rules (Quality Control)" — must-do and must-never guardrails; enforced before report release; preserves structural honesty in prose. Top layer: "Four-Part Structure (Chassis)" — recommendation → evidence → assumptions → counterfactual; ordered by executive's question sequence. Arrow spanning full height on the right: "Integration test: could this report survive a board review 18 months later?" Caption: "Remove any layer and the architecture fails in a specific, predictable way."] -->
+![Remove any layer and the architecture fails in a specific, predictable way.](images/19-the-causal-brain-executive-report-fig-05.png)
+*Figure 19.5 — Four-layer architecture diagram for the executive report, shown*
 
 ![Figure 19.8 — Four-layer architecture diagram for the executive report, shown as a vertical stack. Bottom layer: "Accountability Framework (Governance)"](images/19-the-causal-brain-executive-report-fig-08.jpg)
 
@@ -691,3 +696,52 @@ Who was Marie Neurath, and how does her Isotype work — the disciplined design 
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 19.1 — Tornado chart for the pricing recommendation's assumption sensitivity
+
+Create a standalone D3 v7 HTML file for Figure Tornado chart for the pricing recommendation's assumption sensitivity. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Tornado chart for the pricing recommendation's assumption sensitivity. Horizontal bar chart. Y-axis: five assumptions listed in descending order of bar length (descending sensitivity): (1) "Customer response lag (assumed: 4 wks)" — bar extends left to -$4.1M; (2) "Price-churn correlation (assumed: uncorrelated)" — bar extends left to -$2.7M; (3) "Competitive response timing" — bar extends left to -$1.4M; (4) "EU regulatory environment" — shorter bar, -$0.6M; (5) "FX rate volatility" — shortest bar, -$0.3M. X-axis: Change in projected annual revenue ($M). Each bar annotated with the perturbed value tested (e.g., "tested: 8 weeks"). Callout: "The top two bars deserve the executive's attention. The bottom three are noted but not monitored.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the rel
+
+> Reference implementation: `d3/19-the-causal-brain-executive-report-fig-01.html`
+
+---
+
+### Figure 19.2 — Counterfactual chart for the pricing recommendation
+
+Create a standalone D3 v7 HTML file for Figure Counterfactual chart for the pricing recommendation. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-panel counterfactual chart for the pricing recommendation. Left panel — trajectory chart: X-axis: time (today to 18 months). Y-axis: cumulative revenue impact ($M). Three lines with shaded confidence bands: (1) solid line — "Recommended action" curving upward with narrow band; (2) dashed line — "Inaction" flat or slightly declining with medium band; (3) dotted line — "Second-ranked alternative" between the two with band. Gap between line 1 and line 2 at the 12-month mark is shaded light green and labeled "Cost of inaction: $3.1M/quarter." Right panel — summary box: "Cost of one quarter's delay: $3.1M (CI: $1.8M–$4.5M). Cost of choosing second-ranked alternative over recommendation: $1.4M. Next optimal decision window: Q2 earnings cycle." Caption: "The counterfactual makes deferral expensive rather than invisible.". Use the described data shape and labels; when exact values are not s
+
+> Reference implementation: `d3/19-the-causal-brain-executive-report-fig-02.html`
+
+---
+
+### Figure 19.3 — Mock-up of the complete two-page executive report layout
+
+Create a standalone D3 v7 HTML file for Figure Mock-up of the complete two-page executive report layout. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Mock-up of the complete two-page executive report layout for the pricing recommendation. Page 1: top box — "RECOMMENDATION" header, then the specific action text, named owner, and a two-row table of projected effects (Revenue impact: $12M, CI: $7M–$17M; Churn impact: +1.4 pp, CI: +0.8–+2.1 pp). Below the box: a trajectory chart (recommended vs. inaction vs. second-ranked alternative, with two-band confidence shading and labeled cost-of-inaction gap). Page 2: three-section horizontal layout. Left third — "EVIDENCE" header, three-row variable table with confidence indicators. Middle third — "ASSUMPTIONS" header, tornado chart with top five bars. Right third — "COUNTERFACTUAL" header, summary box with cost-of-waiting number and comparison to second-ranked alternative, plus sign-off field (Decision owner / Action taken / Date / Deviation). Caption: "The two-page format is the minimum v
+
+> Reference implementation: `d3/19-the-causal-brain-executive-report-fig-03.html`
+
+---
+
+### Figure 19.4 — Accountability flow diagram
+
+Create a standalone D3 v7 HTML file for Figure Accountability flow diagram. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Accountability flow diagram. Three main nodes arranged horizontally: (1) "Model Team" box — listed responsibilities: recommendation reflects EV ranking; evidence is honest; assumptions surfaced with magnitudes; counterfactual provided; narration grounded and traced. (2) "Report" box — attributes: timestamped, provenance-tracked, retained, queryable. (3) "Named Executive Owner" box — listed responsibilities: read the report; act on recommendation or document deviation; monitor flagged assumptions; sign off with name and date. Solid arrows: Model Team → Report (produces), Report → Named Owner (informs), Named Owner → Decision (makes). Dotted accountability arrows going backward: Decision → Model Team (answerable if report was misleading), Decision → Named Owner (answerable for the choice). Central annotation below the flow: "The audit record is the document on which accountability rests. It is not a postmortem a
+
+> Reference implementation: `d3/19-the-causal-brain-executive-report-fig-04.html`
+
+---
+
+### Figure 19.5 — Four-layer architecture diagram for the executive report, shown
+
+Create a standalone D3 v7 HTML file for Figure Four-layer architecture diagram for the executive report, shown. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-layer architecture diagram for the executive report, shown as a vertical stack. Bottom layer: "Accountability Framework (Governance)" — converts report from communication artifact to decision artifact; produces audit record; enables board review. Second layer: "Visualization Discipline (Interface)" — decision-focused charts with mandatory uncertainty; no DAG in report; executive reads charts first. Third layer: "Narration Rules (Quality Control)" — must-do and must-never guardrails; enforced before report release; preserves structural honesty in prose. Top layer: "Four-Part Structure (Chassis)" — recommendation → evidence → assumptions → counterfactual; ordered by executive's question sequence. Arrow spanning full height on the right: "Integration test: could this report survive a board review 18 months later?" Caption: "Remove any layer and the architecture fails in a 
+
+> Reference implementation: `d3/19-the-causal-brain-executive-report-fig-05.html`

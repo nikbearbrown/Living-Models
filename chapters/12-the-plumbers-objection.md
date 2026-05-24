@@ -16,7 +16,8 @@ The researchers ran an experiment. In the treatment group, the research team hel
 
 Take-up in the treatment group was 69%. The same households, faced with the same loan, with the same economic logic, had increased take-up by a factor of seven simply because someone else handled the paperwork.
 
-<!-- → [CHART: Bar chart comparing take-up rates — three bars: Control group (~10%), Treatment group (69%), and a reference bar at 100% labeled "Model prediction (near-universal)"; purpose is to make visceral the scale of the gap between correct causal estimate and actual take-up before the chapter names why] -->
+![Bar chart comparing take-up rates ](images/12-the-plumbers-objection-fig-01.png)
+*Figure 12.1 — Bar chart comparing take-up rates *
 
 ![Figure 12.1 — Bar chart comparing take-up rates](images/12-the-plumbers-objection-fig-01.jpg)
 
@@ -35,7 +36,8 @@ Duflo's argument was that neither role captures what is actually needed when an 
 
 Plumbers, in Duflo's framing, do not have the prestige of scientists or the elegance of engineers. They get their hands dirty. They tinker. They make decisions without complete knowledge of the system they are working in, because no one has complete knowledge of the system they are working in. They monitor for leaks after the installation is done, because installations always leak somewhere, and the leaks tell them where the next intervention has to go.
 
-<!-- → [DIAGRAM: Three-role progression — Scientist → Engineer → Plumber; each role labeled with its question ("What are the laws?", "How do we build it?", "How do we make it work here?"), its primary output (causal knowledge, system design, working installation), and its characteristic limitation (doesn't address deployment, doesn't address context, no prestige but indispensable); an arrow spanning all three labeled "gap between estimate and outcome grows as you move right"] -->
+![Three-role progression ](images/12-the-plumbers-objection-fig-02.png)
+*Figure 12.2 — Three-role progression *
 
 ![Figure 12.2 — Three-role progression](images/12-the-plumbers-objection-fig-02.jpg)
 
@@ -99,7 +101,8 @@ Note carefully what the reform did not do. It did not change the policy. The 100
 
 The results were striking. Funds reached beneficiaries faster. Leakage — measured by the gap between funds disbursed and funds received — declined substantially. The cost of the program, per beneficiary served, dropped, because less money was disappearing into the pipes. The reform's success in Bihar was sufficiently clear that the Indian Union Cabinet approved a national rollout of the Ne-FMS architecture in 2015.
 
-<!-- → [DIAGRAM: MGNREGA fund flow before and after Ne-FMS — left panel: four-layer hierarchy with labeled leak points at each layer (delay, corruption, friction); right panel: direct electronic transfer from central account to laborer's bank account, with the intermediate layers removed; amounts or percentages of leakage at each point if estimable; caption: "The plumbing fix did not change the policy — it rerouted the pipes"] -->
+![The plumbing fix did not change the policy — it rerouted the pipes](images/12-the-plumbers-objection-fig-04.png)
+*Figure 12.4 — MGNREGA fund flow before and after Ne-FMS *
 
 ![Figure 12.4 — MGNREGA fund flow before and after Ne-FMS](images/12-the-plumbers-objection-fig-04.jpg)
 
@@ -148,7 +151,8 @@ None of these three problems was visible in the causal model. None could have be
 
 After the plumbing fixes, the program produced retention lifts in the range the original analysis had projected. The model had been right all along. The pipes had been leaking, and once they were repaired, the water arrived where it was supposed to.
 
-<!-- → [DIAGRAM: Three-plumbing-problem anatomy for the B2B onboarding case — a horizontal flow from Causal Recommendation ("drive 3 interactions in 30 days") through three labeled leak points (Sales-to-CSM Handoff Delay, CSM Workload Squeeze, Metric Definition Mismatch) to Observed Outcome (2pp lift); below the leak points, a second flow showing the same path after plumbing fixes with the 14pp projected lift; purpose is to show concretely that all three gaps are delivery failures, not model failures] -->
+![Three-plumbing-problem anatomy for the B2B onboarding case ](images/12-the-plumbers-objection-fig-05.png)
+*Figure 12.5 — Three-plumbing-problem anatomy for the B2B onboarding case *
 
 ![Figure 12.5 — Three-plumbing-problem anatomy for the B2B onboarding case](images/12-the-plumbers-objection-fig-05.jpg)
 
@@ -330,3 +334,44 @@ Who was Esther Boserup, and how does her work on agricultural intensification �
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 12.1 — Bar chart comparing take-up rates 
+
+Create a standalone D3 v7 HTML file for Figure Bar chart comparing take-up rates . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Bar chart comparing take-up rates — three bars: Control group (~10%), Treatment group (69%), and a reference bar at 100% labeled "Model prediction (near-universal)"; purpose is to make visceral the scale of the gap between correct causal estimate and actual take-up before the chapter names why. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-the-plumbers-objection-fig-01.html`
+
+---
+
+### Figure 12.2 — Three-role progression 
+
+Create a standalone D3 v7 HTML file for Figure Three-role progression . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-role progression — Scientist → Engineer → Plumber; each role labeled with its question ("What are the laws?", "How do we build it?", "How do we make it work here?"), its primary output (causal knowledge, system design, working installation), and its characteristic limitation (doesn't address deployment, doesn't address context, no prestige but indispensable); an arrow spanning all three labeled "gap between estimate and outcome grows as you move right". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-the-plumbers-objection-fig-02.html`
+
+---
+
+### Figure 12.4 — MGNREGA fund flow before and after Ne-FMS 
+
+Create a standalone D3 v7 HTML file for Figure MGNREGA fund flow before and after Ne-FMS . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: MGNREGA fund flow before and after Ne-FMS — left panel: four-layer hierarchy with labeled leak points at each layer (delay, corruption, friction); right panel: direct electronic transfer from central account to laborer's bank account, with the intermediate layers removed; amounts or percentages of leakage at each point if estimable; caption: "The plumbing fix did not change the policy — it rerouted the pipes". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-the-plumbers-objection-fig-04.html`
+
+---
+
+### Figure 12.5 — Three-plumbing-problem anatomy for the B2B onboarding case 
+
+Create a standalone D3 v7 HTML file for Figure Three-plumbing-problem anatomy for the B2B onboarding case . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-plumbing-problem anatomy for the B2B onboarding case — a horizontal flow from Causal Recommendation ("drive 3 interactions in 30 days") through three labeled leak points (Sales-to-CSM Handoff Delay, CSM Workload Squeeze, Metric Definition Mismatch) to Observed Outcome (2pp lift); below the leak points, a second flow showing the same path after plumbing fixes with the 14pp projected lift; purpose is to show concretely that all three gaps are delivery failures, not model failures. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/12-the-plumbers-objection-fig-05.html`

@@ -20,7 +20,8 @@ The Ladder of Causation, as we saw in Chapter 5, is sealed in one direction. Run
 
 Rung 1 admits only observational data — what we saw happen in the world. Rung 2 admits interventional data — what happens when we manipulate variables. Rung 3 admits counterfactual data — what would have happened in a world that did not occur. We cannot collect counterfactual data directly, because the worlds in question did not happen. The only way to reach Rung 3 is to combine the data we have with a model rich enough to predict what would have happened in worlds we did not see.
 
-<!-- → [DIAGRAM: Pearl's Ladder revisited from Chapter 1, now annotated for Chapter 9 — three rungs with their standard labels; Rung 3 highlighted; beside it, a two-column annotation: "What you need" (Rung 1: observations, Rung 2: intervention records, Rung 3: SCM + abduction) and "What you cannot get by staying below" (Rung 2: causal direction, Rung 3: case-specific noise); purpose is to show why the SCM is a strict requirement for counterfactuals, not an optional upgrade] -->
+![Pearl's Ladder revisited from Chapter 1, now annotated](images/09-the-counterfactual-fig-01.png)
+*Figure 9.1 — Pearl's Ladder revisited from Chapter 1, now annotated*
 
 ![Figure 9.1 — Pearl's Ladder revisited from Chapter 1, now annotated for Chapter 9](images/09-the-counterfactual-fig-01.jpg)
 
@@ -151,7 +152,8 @@ At the **individual level**: for this specific case, what would have happened? T
 
 There is a caveat. The individual-level counterfactual is fully identifiable only when the SCM is completely specified and the abduction step uniquely recovers the noise terms. If the SCM has nonlinear relationships, or the noise terms are not separately identifiable from the observations, the individual-level counterfactual may be only partially identified — bounded above and below, but not pinned to a specific value. This is the discipline of causal inference: we report what we can identify, we report bounds when we cannot, and we are honest about the dependence on model assumptions.
 
-<!-- → [DIAGRAM: Three-level counterfactual hierarchy — nested circles or stacked bars: outermost is Population (average causal effect, no abduction needed), middle is Subgroup (conditional average, partial conditioning), innermost is Individual (case-specific, full abduction); each layer labeled with the method that reaches it and what information it requires; caption: "Each inner ring requires strictly more from the model than the ring outside it"] -->
+![Each inner ring requires strictly more from the model than the ring outside it](images/09-the-counterfactual-fig-04.png)
+*Figure 9.4 — Three-level counterfactual hierarchy *
 
 ![Figure 9.4 — Three-level counterfactual hierarchy](images/09-the-counterfactual-fig-04.jpg)
 
@@ -372,3 +374,28 @@ Who was Charles Sanders Peirce, and how does his concept of *abduction* — the 
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 9.1 — Pearl's Ladder revisited from Chapter 1, now annotated
+
+Create a standalone D3 v7 HTML file for Figure Pearl's Ladder revisited from Chapter 1, now annotated. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Pearl's Ladder revisited from Chapter 1, now annotated for Chapter 9 — three rungs with their standard labels; Rung 3 highlighted; beside it, a two-column annotation: "What you need" (Rung 1: observations, Rung 2: intervention records, Rung 3: SCM + abduction) and "What you cannot get by staying below" (Rung 2: causal direction, Rung 3: case-specific noise); purpose is to show why the SCM is a strict requirement for counterfactuals, not an optional upgrade. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/09-the-counterfactual-fig-01.html`
+
+---
+
+### Figure 9.4 — Three-level counterfactual hierarchy 
+
+Create a standalone D3 v7 HTML file for Figure Three-level counterfactual hierarchy . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-level counterfactual hierarchy — nested circles or stacked bars: outermost is Population (average causal effect, no abduction needed), middle is Subgroup (conditional average, partial conditioning), innermost is Individual (case-specific, full abduction); each layer labeled with the method that reaches it and what information it requires; caption: "Each inner ring requires strictly more from the model than the ring outside it". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/09-the-counterfactual-fig-04.html`

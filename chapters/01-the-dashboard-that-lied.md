@@ -10,7 +10,8 @@ None of it was real.
 
 A junior analyst, running a routine data quality check four days later, discovered that the European user dimension table had experienced a partial refresh failure the previous Thursday. Approximately 400,000 user profile records had quietly vanished from the reporting pipeline. They did not appear as absent. They generated no error message, no null value, no red flag. They simply ceased to exist, as far as the reporting system was concerned. The denominator shrank. The ratio climbed. The dashboard had not lied the way a fraudster lies. It had lied the way a measuring instrument lies when its reference point drifts: precisely, consistently, and in a direction that felt like good news.
 
-<!-- → [IMAGE: Side-by-side of two identical-looking dashboard line charts — one showing the false 18% WAU increase, one showing the corrected flat line after the 400,000 missing records are restored; caption reads "Same pipeline, different denominator"] -->
+![Of two identical-looking dashboard line charts ](images/01-the-dashboard-that-lied-fig-01.png)
+*Figure 1.1 — Of two identical-looking dashboard line charts *
 
 ![Figure 1.1 — Side-by-side of two identical-looking dashboard line charts](images/01-the-dashboard-that-lied-fig-01.jpg)
 
@@ -68,7 +69,8 @@ The second rung is **intervention**: what would happen if we acted? These questi
 
 The third rung is **counterfactual**: what would have happened if things had been different? Counterfactuals require not just a causal model but a structural causal model — a mathematical object that encodes the mechanisms of the world with enough precision to reason about individual-level outcomes in worlds that never existed. *Would J.C. Penney have retained customers if it had phased out promotions more gradually?* is a counterfactual. *Would this patient have survived if we had given the other treatment?* is a counterfactual. These are the hardest and most valuable questions in decision analytics.
 
-<!-- → [DIAGRAM: Pearl's Ladder as a vertical three-rung structure — each rung labeled with its question type (Association: "What does the data show?", Intervention: "What would happen if we acted?", Counterfactual: "What would have happened if things were different?"), its operator (observe, do(·), structural model), and one example question from the chapter; a barrier between rungs labeled "cannot be crossed by more data alone"] -->
+![Pearl's Ladder as a vertical three-rung structure ](images/01-the-dashboard-that-lied-fig-03.png)
+*Figure 1.3 — Pearl's Ladder as a vertical three-rung structure *
 
 ![Figure 1.3 — Pearl's Ladder as a vertical three-rung structure](images/01-the-dashboard-that-lied-fig-03.jpg)
 
@@ -117,7 +119,8 @@ The corrective posture — for both the technical and the epistemic versions —
 
 Pearl's Ladder describes classes of question. There is a parallel hierarchy that describes what organizations are actually capable of asking. Most enterprises move through four recognizable stages of analytical maturity, and understanding where an organization currently sits is the prerequisite for understanding what its data can and cannot tell it.
 
-<!-- → [INFOGRAPHIC: Four-stage maturity model as a staircase — each step labeled with stage name, primary question, representative tool, and characteristic failure mode; color progression from gray (Descriptive) to deep blue (Prescriptive); stages arranged left-to-right with ascending height] -->
+![Four-stage maturity model as a staircase ](images/01-the-dashboard-that-lied-fig-05.png)
+*Figure 1.5 — Four-stage maturity model as a staircase *
 
 ![Figure 1.5 — Four-stage maturity model as a staircase](images/01-the-dashboard-that-lied-fig-05.jpg)
 
@@ -128,7 +131,8 @@ The **diagnostic stage** adds the question: *why did it happen?* This requires m
 
 The **predictive stage** asks: *what will happen?* This is where machine learning, time-series modeling, and statistical forecasting live. It is also where the relationship between models and the world becomes most consequential and most fragile. A predictive model is an assumption that the statistical relationships present in historical data will persist into the future. When that assumption holds, predictive models are extraordinarily powerful. When the world changes — a pandemic restructures consumer behavior, a competitor's collapse redistributes market share overnight — models trained on the old world continue to predict the old world's future. They are not aware of their own staleness. This phenomenon, known as **concept drift**, is the predictive stage's version of the silent failure: the model continues to produce outputs; those outputs no longer reflect reality; the model does not announce the change.
 
-<!-- → [CHART: Line chart illustrating concept drift — two lines over time: "model predictions" and "actual outcomes"; lines track closely in the training period, then diverge sharply after a structural break (labeled "world changes here"); student should see that the model's confidence interval does not widen despite the growing error] -->
+![Line chart illustrating concept drift ](images/01-the-dashboard-that-lied-fig-06.png)
+*Figure 1.6 — Line chart illustrating concept drift *
 
 ![Figure 1.6 — Line chart illustrating concept drift](images/01-the-dashboard-that-lied-fig-06.jpg)
 
@@ -149,7 +153,8 @@ The first barrier is **incentive structure**. Descriptive analytics produces rep
 
 The second barrier is **data architecture**. Organizations accumulate data systems the way cities accumulate infrastructure: opportunistically, incrementally, without overall design. An ERP system purchased in 2009, a CRM platform added in 2014, a marketing automation tool licensed in 2018 — each was selected to solve a specific operational problem and stores its data in a format optimized for its own purposes. The causal maps that diagnostic work requires, the feature stores that predictive modeling requires, the automated decision pipelines that prescriptive work requires: all of these demand a unified data model that most organizations have never built because they were never designed for integrated analytics.
 
-<!-- → [DIAGRAM: Fragmented data architecture — three isolated system bubbles (ERP 2009, CRM 2014, Marketing Automation 2018) each with their own schema islands; arrows showing where causal mapping, feature stores, and decision pipelines would need to cross those islands but cannot; contrast panel on the right showing a unified data model with the same three sources feeding a shared ontology layer] -->
+![Fragmented data architecture ](images/01-the-dashboard-that-lied-fig-07.png)
+*Figure 1.7 — Fragmented data architecture *
 
 ![Figure 1.7 — Fragmented data architecture](images/01-the-dashboard-that-lied-fig-07.jpg)
 
@@ -328,3 +333,52 @@ Who was John Snow, and how does his 1854 cholera map connect to the chapter's cl
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1.1 — Of two identical-looking dashboard line charts 
+
+Create a standalone D3 v7 HTML file for Figure Of two identical-looking dashboard line charts . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side of two identical-looking dashboard line charts — one showing the false 18% WAU increase, one showing the corrected flat line after the 400,000 missing records are restored; caption reads "Same pipeline, different denominator". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-the-dashboard-that-lied-fig-01.html`
+
+---
+
+### Figure 1.3 — Pearl's Ladder as a vertical three-rung structure 
+
+Create a standalone D3 v7 HTML file for Figure Pearl's Ladder as a vertical three-rung structure . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Pearl's Ladder as a vertical three-rung structure — each rung labeled with its question type (Association: "What does the data show?", Intervention: "What would happen if we acted?", Counterfactual: "What would have happened if things were different?"), its operator (observe, do(·), structural model), and one example question from the chapter; a barrier between rungs labeled "cannot be crossed by more data alone". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-the-dashboard-that-lied-fig-03.html`
+
+---
+
+### Figure 1.5 — Four-stage maturity model as a staircase 
+
+Create a standalone D3 v7 HTML file for Figure Four-stage maturity model as a staircase . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-stage maturity model as a staircase — each step labeled with stage name, primary question, representative tool, and characteristic failure mode; color progression from gray (Descriptive) to deep blue (Prescriptive); stages arranged left-to-right with ascending height. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-the-dashboard-that-lied-fig-05.html`
+
+---
+
+### Figure 1.6 — Line chart illustrating concept drift 
+
+Create a standalone D3 v7 HTML file for Figure Line chart illustrating concept drift . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Line chart illustrating concept drift — two lines over time: "model predictions" and "actual outcomes"; lines track closely in the training period, then diverge sharply after a structural break (labeled "world changes here"); student should see that the model's confidence interval does not widen despite the growing error. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-the-dashboard-that-lied-fig-06.html`
+
+---
+
+### Figure 1.7 — Fragmented data architecture 
+
+Create a standalone D3 v7 HTML file for Figure Fragmented data architecture . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Fragmented data architecture — three isolated system bubbles (ERP 2009, CRM 2014, Marketing Automation 2018) each with their own schema islands; arrows showing where causal mapping, feature stores, and decision pipelines would need to cross those islands but cannot; contrast panel on the right showing a unified data model with the same three sources feeding a shared ontology layer. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/01-the-dashboard-that-lied-fig-07.html`

@@ -10,7 +10,8 @@ Berkson stopped the discussion before it left the building. The pattern, he show
 
 The data did not contain evidence of a protective mechanism. It contained evidence of a collider — *being hospitalized* — that had been conditioned on by the simple act of looking at hospital records. Conditioning on the collider induced a spurious negative correlation between two conditions that, in the general population, were either uncorrelated or weakly positively correlated. The protective effect existed only inside the hospital, where it was an arithmetic consequence of the selection mechanism. Outside the hospital, in the population at large, it would not be found.
 
-<!-- → [DIAGRAM: Berkson's collider structure — three nodes: Diabetes (D), Gallbladder Disease (G), Hospitalized (H); arrows from D to H and from G to H (both cause hospitalization); a dashed bidirectional arrow between D and G labeled "spurious correlation induced by conditioning on H"; a second panel showing the population-level graph with no arrow between D and G; caption: "Conditioning on the common effect (H) creates a correlation between its causes (D and G) that does not exist in the population"] -->
+![Conditioning on the common effect (H) creates a correlation between its causes (D and G) that does not exist in the population](images/15-how-experts-get-causation-wrong-fig-01.png)
+*Figure 15.1 — Berkson's collider structure *
 
 ![Figure 15.1 — Berkson's collider structure](images/15-how-experts-get-causation-wrong-fig-01.jpg)
 
@@ -63,7 +64,8 @@ The compression has two specific consequences worth naming.
 
 *Balancing-loop blindness* is the second. A balancing loop is a structure in which the system's responses tend to oppose changes, returning the system toward a set point. A thermostat is a balancing loop. Many homeostatic biological mechanisms are balancing loops. Markets, in many regimes, exhibit balancing dynamics — a price that rises too quickly induces supply responses that bring it back down. Experts who reason about such systems with linear models systematically overestimate the persistence of changes and are then surprised when an intervention that "should" have produced a sustained shift produces only a temporary one before the system snaps back.
 
-<!-- → [DIAGRAM: Reinforcing vs. balancing loop comparison — left panel: a reinforcing loop with two nodes (Bank Withdrawals, Fear of Insolvency) connected by two arrows each labeled "+", creating a cycle; right panel: a balancing loop with two nodes (Price, Supply) connected by a positive and a negative arrow; beneath each, the characteristic dynamic (exponential runaway vs. oscillation/return to setpoint); caption: "The same arrow in a different cycle position produces opposite system dynamics"] -->
+![The same arrow in a different cycle position produces opposite system dynamics](images/15-how-experts-get-causation-wrong-fig-02.png)
+*Figure 15.2 — Reinforcing vs*
 
 ![Figure 15.2 — Reinforcing vs. balancing loop comparison](images/15-how-experts-get-causation-wrong-fig-02.jpg)
 
@@ -307,3 +309,28 @@ Who was Amos Tversky, and how does his work with Kahneman on heuristics and bias
 
 What changes? What gets better? What gets worse?
 
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 15.1 — Berkson's collider structure 
+
+Create a standalone D3 v7 HTML file for Figure Berkson's collider structure . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Berkson's collider structure — three nodes: Diabetes (D), Gallbladder Disease (G), Hospitalized (H); arrows from D to H and from G to H (both cause hospitalization); a dashed bidirectional arrow between D and G labeled "spurious correlation induced by conditioning on H"; a second panel showing the population-level graph with no arrow between D and G; caption: "Conditioning on the common effect (H) creates a correlation between its causes (D and G) that does not exist in the population". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/15-how-experts-get-causation-wrong-fig-01.html`
+
+---
+
+### Figure 15.2 — Reinforcing vs
+
+Create a standalone D3 v7 HTML file for Figure Reinforcing vs. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Reinforcing vs. balancing loop comparison — left panel: a reinforcing loop with two nodes (Bank Withdrawals, Fear of Insolvency) connected by two arrows each labeled "+", creating a cycle; right panel: a balancing loop with two nodes (Price, Supply) connected by a positive and a negative arrow; beneath each, the characteristic dynamic (exponential runaway vs. oscillation/return to setpoint); caption: "The same arrow in a different cycle position produces opposite system dynamics". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/15-how-experts-get-causation-wrong-fig-02.html`
