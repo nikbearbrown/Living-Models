@@ -21,7 +21,6 @@ Wright invented a formal notation for the asymmetry. He drew it as a diagram wit
 
 ![Figure 6.1 — Two side-by-side representations of the same X–Y relationship](images/06-graphs-that-think-fig-01.jpg)
 
-
 This chapter is about that diagram — the directed acyclic graph, or DAG — and about what we get when we add functional form to it: the structural causal model, or SCM. These are the two objects on which the rest of the book runs.
 
 ---
@@ -65,7 +64,6 @@ The diagram makes the structural claim explicit, and once it is explicit, we can
 
 ![Figure 6.2 — Three candidate DAGs for the ice cream–drowning correlation](images/06-graphs-that-think-fig-02.jpg)
 
-
 ---
 
 ## From DAG to Structural Causal Model
@@ -101,7 +99,6 @@ That is the move from DAG to SCM, and it is the move that makes Rung 2 computabl
 
 ![Figure 6.3 — Side-by-side of the original SCM and the do-modified SCM for the ice cream example](images/06-graphs-that-think-fig-03.jpg)
 
-
 ---
 
 ## Why the Same Data Can Fit Multiple DAGs
@@ -114,7 +111,6 @@ Consider three arrangements involving two observed variables: $X \rightarrow Y$,
 *Figure 6.4 — The three Markov-equivalent two-node structures *
 
 ![Figure 6.4 — The three Markov-equivalent two-node structures](images/06-graphs-that-think-fig-04.jpg)
-
 
 This is the seed of the equivalence problem, which we take up in Chapter 7. For now, the implication is the one we have already noted: the choice among Markov-equivalent DAGs is not a statistical decision. It cannot be made from the data. It must be made on substantive grounds — knowledge of mechanism, temporal precedence, or controlled experiment.
 
@@ -161,7 +157,6 @@ The graph **supports a global view**. Regression analyzes one outcome variable a
 | **Global vs. single-outcome scope** | _fill in_ | _fill in_ |
 
 : {.infographic-table}
-
 
 ---
 
@@ -313,45 +308,3 @@ Who was Sewall Wright, and how does his 1918 invention of path analysis — and 
 - Add a constraint: "Answer as if you're writing the rationale for using a DAG instead of a regression equation in a board memo"
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 6.1 — Two side-by-side representations of the same X–Y relationship
-
-Create a standalone D3 v7 HTML file for Figure Two side-by-side representations of the same X–Y relationship. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two side-by-side representations of the same X–Y relationship — left: a regression equation Y = 0.6X + 1.2 with a double-headed dashed arrow between X and Y labeled "symmetric: describes correlation only"; right: a DAG with a single-headed arrow X → Y labeled "asymmetric: encodes a causal claim"; caption reads "Same numbers, different objects". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/06-graphs-that-think-fig-01.html`
-
----
-
-### Figure 6.2 — Three candidate DAGs for the ice cream–drowning correlation
-
-Create a standalone D3 v7 HTML file for Figure Three candidate DAGs for the ice cream–drowning correlation. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three candidate DAGs for the ice cream–drowning correlation — (1) Ice Cream → Drowning, (2) Drowning → Ice Cream, (3) Heat → Ice Cream and Heat → Drowning with no direct edge between them; each labeled with its causal story; a caption noting that all three are consistent with the same observed correlation, and that only Story 3 survives domain knowledge. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/06-graphs-that-think-fig-02.html`
-
----
-
-### Figure 6.3 — Of the original SCM and the do-modified SCM
-
-Create a standalone D3 v7 HTML file for Figure Of the original SCM and the do-modified SCM. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side of the original SCM and the do-modified SCM for the ice cream example — left panel shows the three equations with arrows intact, right panel shows I = i with the incoming arrow from T removed; a label "do(I = i) severs this edge" pointing to the deleted arrow; caption: "Intervention is surgery on the model, not observation of the world". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/06-graphs-that-think-fig-03.html`
-
----
-
-### Figure 6.4 — The three Markov-equivalent two-node structures 
-
-Create a standalone D3 v7 HTML file for Figure The three Markov-equivalent two-node structures . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: The three Markov-equivalent two-node structures — X → Y, Y → X, X ← Z → Y (with Z shown as a dashed node to indicate it is unobserved); beneath each, a note stating "same P(X,Y)" ; a label spanning all three: "No statistical test on X and Y alone can distinguish these". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/06-graphs-that-think-fig-04.html`

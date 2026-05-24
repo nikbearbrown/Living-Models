@@ -29,7 +29,6 @@ Now apply this to the pricing problem. Suppose the diagram has the following str
 
 ![Figure 8.1 — Pricing causal diagram](images/08-estimating-effects-fig-01.jpg)
 
-
 This diagnosis tells the analyst exactly what to do: regress renewal on price, controlling for customer characteristics, but *not* for engagement. The result is the causal effect of price on renewal, identified up to the model's assumptions.
 
 The analyst's original regression — which controlled for engagement along with everything else — was not the causal effect. It was a partially closed estimate biased toward zero, because conditioning on a mediator blocks some of the causal path. The CFO's forecast was accordingly an underestimate. Whether the actual impact would have been good or bad is a separate question, but the analyst's number was the wrong number.
@@ -64,7 +63,6 @@ The backdoor criterion resolves both errors simultaneously. It identifies which 
 
 : {.comparison-table}
 
-
 ---
 
 ## Double Machine Learning
@@ -83,7 +81,6 @@ Double machine learning is one of the workhorses of modern causal inference in p
 *Figure 8.3 — DML procedure as a three-step flow *
 
 ![Figure 8.3 — DML procedure as a three-step flow](images/08-estimating-effects-fig-03.jpg)
-
 
 ---
 
@@ -119,7 +116,6 @@ The average effect would have led to a worse decision than the heterogeneous eff
 *Figure 8.4 — Heterogeneous treatment effect *
 
 ![Figure 8.4 — Heterogeneous treatment effect](images/08-estimating-effects-fig-04.jpg)
-
 
 ---
 
@@ -289,37 +285,3 @@ Who was Gertrude Cox, and how does her work on experimental design and statistic
 - Add a constraint: "Answer as if you're writing the introduction to a chapter on identifying causal effects from observational data"
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 8.1 — Pricing causal diagram 
-
-Create a standalone D3 v7 HTML file for Figure Pricing causal diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Pricing causal diagram — nodes: Customer Characteristics (C), Price (P), Engagement (E), Renewal (R); arrows: C → P, C → R, P → E, E → R, P → R (direct); a red-highlighted path showing the backdoor path C → P and C → R; a label "block this" pointing to C with a box around it; a label "do NOT condition on this" pointing to E; caption: "The backdoor criterion identifies what to adjust for and what to leave alone". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/08-estimating-effects-fig-01.html`
-
----
-
-### Figure 8.3 — DML procedure as a three-step flow 
-
-Create a standalone D3 v7 HTML file for Figure DML procedure as a three-step flow . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: DML procedure as a three-step flow — left box: "Regress X on Z using ML → residual X̃"; middle box: "Regress Y on Z using ML → residual Ỹ"; right box: "Regress Ỹ on X̃ → causal effect τ̂"; arrows between boxes; below the flow, a note: "Z is determined by the causal diagram (backdoor criterion), not by the ML step"; caption: "DML separates the structural question (which Z to adjust for) from the statistical question (how to adjust for high-dimensional Z)". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/08-estimating-effects-fig-03.html`
-
----
-
-### Figure 8.4 — Heterogeneous treatment effect 
-
-Create a standalone D3 v7 HTML file for Figure Heterogeneous treatment effect . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Heterogeneous treatment effect — a distribution plot or two-panel bar chart; left panel shows the average effect (−10.5%) as a single bar; right panel shows the CATE by segment: enterprise at 0%, small business at −15%, with segment sizes shown; a third element showing the resulting decision: "raise for enterprise, grandfather small business"; caption: "The average hides the segmentation that makes the decision tractable". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/08-estimating-effects-fig-04.html`

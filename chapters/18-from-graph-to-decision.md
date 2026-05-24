@@ -17,7 +17,6 @@ She needs a portfolio. She needs the model to tell her not just which interventi
 
 ![Figure 18.1 — Four-step pipeline overview](images/18-from-graph-to-decision-fig-01.jpg)
 
-
 ---
 
 ## Step One: Parameterizing the Graph
@@ -46,7 +45,6 @@ The second is **uncertainty representation**. Every parameter in the model has u
 *Figure 18.2 — Parameterization pipeline *
 
 ![Figure 18.2 — Parameterization pipeline](images/18-from-graph-to-decision-fig-02.jpg)
-
 
 ---
 
@@ -80,7 +78,6 @@ For the operations head's question — *what should we do this quarter?* — the
 
 : {.infographic-table}
 
-
 The implementation move that turns the parameterized graph into a counterfactual engine is operationally straightforward. Modern causal inference libraries — DoWhy, EconML, CausalML — support the do-operator and the three-step procedure as primary operations. Given a parameterized SCM, the libraries compute interventional and counterfactual distributions with a few lines of code. The intellectual work is in the graph and the parameters; the engineering work of running the queries is comparatively light.
 
 One important nuance is **heterogeneity**. The model has produced a parameterized graph that represents the average mechanism across the population. But individual units — individual customers, individual production lines, individual time periods — vary in how they respond to interventions. The same intervention applied to two customers with different characteristics may produce dramatically different effects. This is the conditional average treatment effect we met in Chapter 8, and it is why average effects are rarely the decision-relevant fact.
@@ -113,7 +110,6 @@ A methodological point worth underlining: the EV ranking depends on the paramete
 *Figure 18.4 — EV ranking visualization *
 
 ![Figure 18.4 — EV ranking visualization](images/18-from-graph-to-decision-fig-04.jpg)
-
 
 ---
 
@@ -162,7 +158,6 @@ The four extensions can be combined. The full operational formulation for a typi
 | **Chance-Constrained** | _fill in_ | _fill in_ |
 
 : {.comparison-table}
-
 
 The output of the optimization is a portfolio — a subset of interventions, satisfying all the constraints, that maximizes total Expected Value. For the operations head, the portfolio specifies which six or seven of the thirty-one candidate interventions to do, in what order, on which lines, with what budget allocation. The portfolio comes with its own EV bounds (the sum of the bounds on its constituent interventions, with appropriate covariance corrections), its own sensitivity analysis (which interventions in the portfolio are most sensitive to parameter perturbations), and its own counterfactual statement (the predicted outcome relative to doing nothing and to the next-best portfolio).
 
@@ -352,37 +347,3 @@ Who was Prasanta Chandra Mahalanobis, and how does his work using statistical-ec
 - Add a constraint: "Answer as if you're writing the policy memo that accompanies an EV-ranked portfolio"
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 18.1 — Four-step pipeline overview 
-
-Create a standalone D3 v7 HTML file for Figure Four-step pipeline overview . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-step pipeline overview — four boxes in a horizontal sequence: (1) Parameterize the Graph, (2) Run the Counterfactual, (3) Rank by Expected Value, (4) Constrained-Knapsack Portfolio; below each box, a one-line description of its input and output; arrows between boxes; a label at the far left "Validated Graph (Ch. 17)" and at the far right "Structured Package → Ch. 19"; purpose is to orient the reader to the chapter's architecture before the steps are developed individually. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/18-from-graph-to-decision-fig-01.html`
-
----
-
-### Figure 18.2 — Parameterization pipeline 
-
-Create a standalone D3 v7 HTML file for Figure Parameterization pipeline . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Parameterization pipeline — a DAG fragment showing two parent nodes X1 and X2 pointing into Y; beside the arrows, coefficients β1 and β2 with illustrative confidence intervals; beside the node Y, the structural equation Y = β1 X1 + β2 X2 + ε; a second panel showing the same structure with a nonlinear curve replacing the linear relationship, labeled "use when mechanism is nonlinear in decision range"; caption: "The graph specifies structure; the parameters specify magnitude and uncertainty". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/18-from-graph-to-decision-fig-02.html`
-
----
-
-### Figure 18.4 — EV ranking visualization 
-
-Create a standalone D3 v7 HTML file for Figure EV ranking visualization . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: EV ranking visualization — horizontal bar chart with 10 candidate interventions ranked by EV; each bar shows the point estimate with a horizontal error bar representing the 90% confidence interval; bars color-coded by confidence width (narrow = high confidence, wide = low confidence); a vertical dashed line at zero; four bars color-coded by response segment (persuadable, sure thing, lost cause, do-not-disturb) with a legend; caption: "The ranking is a distribution, not a list; uncertainty determines which interventions are robustly ranked above alternatives". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/18-from-graph-to-decision-fig-04.html`

@@ -15,7 +15,6 @@ A junior analyst, running a routine data quality check four days later, discover
 
 ![Figure 1.1 — Side-by-side of two identical-looking dashboard line charts](images/01-the-dashboard-that-lied-fig-01.jpg)
 
-
 The team's instinct, once the failure was identified, was to classify it as a technical problem with a technical fix. They were right as far as they went. The alert was added. The architecture was hardened. But the analyst who led the investigation noticed something that troubled her more than the pipeline itself. In the four days between the bad Thursday and the corrective Wednesday, no one had asked whether the data was reliable. The number had looked right, so it had been treated as right. The dashboard's authority had been borrowed from its appearance of precision, not from any demonstrated correspondence to the world it claimed to describe.
 
 This is not a story about a database query. It is a story about what an organization believed it was entitled to know — and how that belief, left unexamined, became the mechanism of its own deception.
@@ -52,7 +51,6 @@ The distinction has a precise mathematical form. $P(Y \mid X)$ is a conditional 
 
 : {.infographic-table}
 
-
 What the data could not reveal — what it *structurally* could not reveal — was that J.C. Penney's customers did not experience promotional pricing as a distortion of their true preference. For a significant portion of the customer base, the promotional event was the experience. The hunt for the deal, the satisfaction of the markdown, the social performance of having paid less than full price: these were not friction in the system. They were the system. Eliminating the promotions did not reveal latent demand for everyday low prices. It destroyed the mechanism through which customers had been choosing to shop at all. The causal structure of customer behavior was simply not visible in the observational record. And because Johnson's analytical framework had no language for the distinction between observing a world and making a world, he could not have known what he was missing.
 
 This is the central epistemological divide this book is built to cross. Every business decision of consequence is, at its core, a $do$ question: not "what tends to happen when $X$ is present in the data?" but "what would happen if we made $X$ happen?" Descriptive and correlational methods can answer the first question. The architecture this book calls a Living Model is built to answer the second.
@@ -73,7 +71,6 @@ The third rung is **counterfactual**: what would have happened if things had bee
 *Figure 1.3 — Pearl's Ladder as a vertical three-rung structure *
 
 ![Figure 1.3 — Pearl's Ladder as a vertical three-rung structure](images/01-the-dashboard-that-lied-fig-03.jpg)
-
 
 The hierarchy has one property that makes it unlike a progression of technical skills: no rung is reachable by accumulating more data, more compute, or more analytical sophistication at the rung below. This bears repeating because it runs against the grain of how most data organizations have been built. A team with a thousand-row dataset and a structural causal model can answer questions that a team with a billion-row dataset and a correlation engine cannot. The Ladder describes not a gradient of difficulty but a series of categorical shifts in what kind of question is even being asked. J.C. Penney did not need more historical transaction data. It needed a different kind of instrument.
 
@@ -108,7 +105,6 @@ This is what I mean by a **silent failure**. A system that crashes announces its
 
 : {.infographic-table}
 
-
 The organizational cost of silent failures extends beyond the immediate decision. The WAU audit could establish what had gone wrong in the current reporting cycle, but it could not retroactively certify the integrity of the historical record. No one could answer how many prior decisions had been made on silently incomplete data. J.C. Penney's postmortem could reconstruct the inferential error, but it could not recover $4.3 billion or the institutional trust of a customer base that had been told, by a year of pricing policy, that their relationship with the brand was being renegotiated without their consent. Trust broken by a silent failure does not snap cleanly back — not because the failure was malicious, but because it was invisible for so long that the recovery itself becomes evidence that the visibility problem persists.
 
 The corrective posture — for both the technical and the epistemic versions — is what data engineers call **observability**: not a monitoring system bolted onto an analytics stack after the fact, but a measurement architecture that treats its own integrity as a first-class output. An observable analytics system does not just tell you what is happening to your users. It tells you what is happening to itself. An observable causal inference framework does not just tell you what the data shows. It tells you which questions the data is structurally capable of answering — and which it is not.
@@ -124,7 +120,6 @@ Pearl's Ladder describes classes of question. There is a parallel hierarchy that
 
 ![Figure 1.5 — Four-stage maturity model as a staircase](images/01-the-dashboard-that-lied-fig-05.jpg)
 
-
 The foundational stage is **descriptive analytics**: *what happened?* The tools are dashboards, aggregation queries, visualization platforms. The mindset is archival. An organization at this stage may have beautiful, interactive, real-time visualizations — and yet it is looking backward, at association-level data. The specific vulnerability of this stage is that it has no mechanism for distinguishing a true signal from an artifact of its own measurement process. A dashboard cannot ask whether its own output is reliable. It can only display what the pipeline returns.
 
 The **diagnostic stage** adds the question: *why did it happen?* This requires moving from correlation to causal mapping — tracing the structural drivers of observed patterns rather than documenting the patterns themselves. A diagnostic analyst looking at a margin squeeze does not just record that margins fell in Q3. She asks whether the compression came from procurement price increases, a shift in product mix, labor cost inflation, or pricing decisions made in response to competitive pressure. Each of these explanations implies a different intervention. Treating them as interchangeable is the descriptive stage error applied to management decisions. Diagnostic maturity requires that data not sit in silos — when the cost data, the pricing data, the headcount data, and the procurement data live in separate systems with no shared ontology, the causal mapping this stage requires is simply not possible. Organizations fail here not because they lack analytical talent but because their data architecture was built for record-keeping, and no one has built the bridges.
@@ -135,7 +130,6 @@ The **predictive stage** asks: *what will happen?* This is where machine learnin
 *Figure 1.6 — Line chart illustrating concept drift *
 
 ![Figure 1.6 — Line chart illustrating concept drift](images/01-the-dashboard-that-lied-fig-06.jpg)
-
 
 The **prescriptive stage** asks: *what should we do?* At this level, analytics is integrated directly into operational decision-making. A prescriptive procurement system does not generate a vendor risk score for a human to review next week — it monitors vendor performance in real time, evaluates risk against a continuously updated threshold, and triggers a specific downstream action within a defined response window. But prescriptive analytics carries an underappreciated danger: speed without a governor. On August 1, 2012, Knight Capital Group deployed an automated trading system that executed in error at algorithmic speed. In 45 minutes, the firm lost $440 million — because no human decision node existed between the system's execution loop and the market. The system was working exactly as designed. The design had no provision for stopping.
 
@@ -157,7 +151,6 @@ The second barrier is **data architecture**. Organizations accumulate data syste
 *Figure 1.7 — Fragmented data architecture *
 
 ![Figure 1.7 — Fragmented data architecture](images/01-the-dashboard-that-lied-fig-07.jpg)
-
 
 The third barrier is **the comfort of the lagging indicator**. A dashboard showing last week's revenue, last month's churn rate, last quarter's customer acquisition cost is a record of what has already happened. It cannot be wrong in the way a forecast can be wrong. It does not require anyone to commit to a prediction and be held accountable if that prediction fails. For organizations whose reporting culture is built around the safety of the historical record, the move toward predictive and prescriptive analytics represents an acceptance of the risk of being visibly, attributably wrong — a fundamentally different relationship with uncertainty than the backward-looking dashboard affords.
 
@@ -190,7 +183,6 @@ A Living Model is *causal*: its structure encodes mechanisms, not correlations, 
 | **Living Model** | _fill in_ | _fill in_ |
 
 : {.data-table}
-
 
 A dashboard is none of these things. A predictive model satisfies the third property and none of the others. A prescriptive system may approximate the fourth while still lacking the first two. A Living Model is not an upgrade to existing analytics infrastructure. It is a different kind of analytical object, built from different foundations, asking different questions. Those foundations are the subject of this book.
 
@@ -332,53 +324,3 @@ Who was John Snow, and how does his 1854 cholera map connect to the chapter's cl
 - Add a constraint: "Answer as if you're writing the executive summary of a post-mortem on a silent-failure incident"
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 1.1 — Of two identical-looking dashboard line charts 
-
-Create a standalone D3 v7 HTML file for Figure Of two identical-looking dashboard line charts . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side of two identical-looking dashboard line charts — one showing the false 18% WAU increase, one showing the corrected flat line after the 400,000 missing records are restored; caption reads "Same pipeline, different denominator". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/01-the-dashboard-that-lied-fig-01.html`
-
----
-
-### Figure 1.3 — Pearl's Ladder as a vertical three-rung structure 
-
-Create a standalone D3 v7 HTML file for Figure Pearl's Ladder as a vertical three-rung structure . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Pearl's Ladder as a vertical three-rung structure — each rung labeled with its question type (Association: "What does the data show?", Intervention: "What would happen if we acted?", Counterfactual: "What would have happened if things were different?"), its operator (observe, do(·), structural model), and one example question from the chapter; a barrier between rungs labeled "cannot be crossed by more data alone". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/01-the-dashboard-that-lied-fig-03.html`
-
----
-
-### Figure 1.5 — Four-stage maturity model as a staircase 
-
-Create a standalone D3 v7 HTML file for Figure Four-stage maturity model as a staircase . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-stage maturity model as a staircase — each step labeled with stage name, primary question, representative tool, and characteristic failure mode; color progression from gray (Descriptive) to deep blue (Prescriptive); stages arranged left-to-right with ascending height. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/01-the-dashboard-that-lied-fig-05.html`
-
----
-
-### Figure 1.6 — Line chart illustrating concept drift 
-
-Create a standalone D3 v7 HTML file for Figure Line chart illustrating concept drift . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Line chart illustrating concept drift — two lines over time: "model predictions" and "actual outcomes"; lines track closely in the training period, then diverge sharply after a structural break (labeled "world changes here"); student should see that the model's confidence interval does not widen despite the growing error. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/01-the-dashboard-that-lied-fig-06.html`
-
----
-
-### Figure 1.7 — Fragmented data architecture 
-
-Create a standalone D3 v7 HTML file for Figure Fragmented data architecture . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Fragmented data architecture — three isolated system bubbles (ERP 2009, CRM 2014, Marketing Automation 2018) each with their own schema islands; arrows showing where causal mapping, feature stores, and decision pipelines would need to cross those islands but cannot; contrast panel on the right showing a unified data model with the same three sources feeding a shared ontology layer. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/01-the-dashboard-that-lied-fig-07.html`

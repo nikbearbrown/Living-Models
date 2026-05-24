@@ -37,7 +37,6 @@ The second source is **insufficient data**. The independence tests that underlie
 
 ![Figure 17.1 — Two-column illustration of the two sources of undirected edges in a CPDAG. Left column: "Source 1](images/17-resolving-the-graph-fig-01.jpg)
 
-
 The diagnostic question — which source is producing a given undirected edge? — is what determines whether you invest in more data or more expert sessions. I will return to this decision in detail. But first we need to understand what the algorithms do.
 
 ---
@@ -71,7 +70,6 @@ PC also requires that the conditional independence tests it runs are reliable. I
 
 ![Figure 17.2 — Four-panel step-by-step illustration of PC applied to a five-variable system (A, B, C, D, E). Panel 1: fully connected graph](images/17-resolving-the-graph-fig-02.jpg)
 
-
 ### GES: Score-Based Discovery
 
 Greedy Equivalence Search approaches the structure-learning problem differently. Rather than testing for independence relationships, it searches over the space of possible CPDAGs for the one that maximizes a penalized likelihood score. The most common scoring criterion is the Bayesian Information Criterion (BIC), which balances fit (how well does the model reproduce the observed conditional distributions?) against complexity (how many edges does the model require?).
@@ -90,7 +88,6 @@ GES is also computationally more expensive than PC for the same number of variab
 *Figure 17.3 — Two-phase illustration of GES on the same five-variable*
 
 ![Figure 17.3 — Two-phase illustration of GES on the same five-variable system. Phase 1 (forward search): starts from empty graph; three steps shown](images/17-resolving-the-graph-fig-03.jpg)
-
 
 ### NOTEARS: Continuous-Optimization Discovery
 
@@ -112,7 +109,6 @@ More broadly, NOTEARS and its successors are sensitive to distributional assumpt
 *Figure 17.4 — Conceptual illustration of the NOTEARS approach*
 
 ![Figure 17.4 — Two-panel conceptual illustration of the NOTEARS approach. Left panel: "The combinatorial explosion." A vertical bar chart showing number of possible DAGs vs. number of variables: n=5 (1,024), n=10 (4.2 trillion), n=20 (astronomical](images/17-resolving-the-graph-fig-04.jpg)
-
 
 ### FCI: Discovery Under Latent Confounding
 
@@ -141,7 +137,6 @@ FCI is computationally more expensive than PC — the augmented tests it require
 
 ![Figure 17.5 — Side-by-side comparison of PC and FCI output on the same four-variable dataset containing a known latent confounder L (unmeasured) that affects both X1 and X3. Left panel (PC output): CPDAG showing a direct edge X1 → X3, oriented incorrectly because PC interprets the correlation induced by L as a direct relationship. The latent L is shown in a dashed box above the graph with a note "L not in variable set](images/17-resolving-the-graph-fig-05.jpg)
 
-
 ### Choosing Among the Four
 
 The four algorithms are not ranked — there is no universally best algorithm. The choice is always a function of the domain, the data, and the assumptions the practitioner is willing to make and defend.
@@ -158,7 +153,6 @@ The decision logic follows from the assumption profiles:
 *Figure 17.6 — Decision tree for algorithm selection*
 
 ![Figure 17.6 — Decision tree for algorithm selection. Root node: "Are latent confounders likely in this domain?" Left branch (Yes) → FCI. Right branch (No) → "How many variables?" → Sub-branch: Under ~100 → "Is a defensible scoring criterion required (e.g., regulatory audit)?" → Yes → GES](images/17-resolving-the-graph-fig-06.jpg)
-
 
 ---
 
@@ -178,7 +172,6 @@ The elicitation from Chapter 16 produces a CPDAG; the algorithms from Concept 1 
 *Figure 17.7 — Illustration of the CPDAG handoff patterns*
 
 ![Figure 17.7 — Three-panel illustration of the CPDAG handoff patterns. Each panel shows two CPDAGs side by side](images/17-resolving-the-graph-fig-07.jpg)
-
 
 ### The Three-Step Resolution Protocol
 
@@ -207,7 +200,6 @@ The output of the second session is either a revised commitment — the expert, 
 
 ![Figure 17.8 — Flowchart of the three-step resolution protocol. Entry point: "Algorithm contradicts expert commitment on edge X→Y." Step 1 box: "Test stability](images/17-resolving-the-graph-fig-08.jpg)
 
-
 ---
 
 ## Concept 3 — More Data or More Experts?
@@ -228,7 +220,6 @@ The diagnostic for which is which: bootstrap the data (resample with replacement
 *Figure 17.9 — Bootstrap orientation frequency chart for three example edges*
 
 ![Figure 17.9 — Bootstrap orientation frequency chart for three example edges. X-axis: orientation frequency (0% to 100%, where 50% = equal split). Y-axis: three edge labels (A—B, C—D, E—F). For each edge, a horizontal bar spans from the left orientation frequency to the right orientation frequency, with a center marker at 50%. Edge A—B: bar spans 48%–52%](images/17-resolving-the-graph-fig-09.jpg)
-
 
 ### When More Data Is the Right Move
 
@@ -269,7 +260,6 @@ The framework is not a formula. Data teams default to more data; consulting team
 
 ![Figure 17.10 — Decision tree for the more-data / more-experts diagnostic. Entry: "Unresolved ambiguity in the graph (undirected edge or persistent disagreement)." Step 1 box: "Bootstrap the data. Examine orientation stability for the specific edge." Three branches: (1) "~50/50 split](images/17-resolving-the-graph-fig-10.jpg)
 
-
 ---
 
 ## Concept 4 — The Validated Graph as a Living Artifact
@@ -305,7 +295,6 @@ Drift monitoring is not the same as model performance monitoring. Model performa
 
 ![Figure 17.11 — Time-series line chart showing structural drift monitoring over 24 months. X-axis: time (months since validation). Y-axis: structural Hamming distance between validated graph and algorithm output on latest data (0 = identical, higher = more different). The line starts near 0 and rises gradually. Two horizontal reference lines: a low threshold (labeled "Review threshold](images/17-resolving-the-graph-fig-11.jpg)
 
-
 ### Re-Elicitation Triggers
 
 Drift monitoring is one trigger for re-elicitation. Others:
@@ -326,7 +315,6 @@ The audit trail answers: *why does the model recommend this?* The answer, fully 
 *Figure 17.12 — Governance lifecycle *
 
 ![Figure 17.12 — Governance lifecycle](images/17-resolving-the-graph-fig-12.jpg)
-
 
 ---
 
@@ -352,7 +340,6 @@ This is what distinguishes a Living Model from a static analysis. The static ana
 *Figure 17.13 — End-to-end workflow diagram *
 
 ![Figure 17.13 — End-to-end workflow diagram](images/17-resolving-the-graph-fig-13.jpg)
-
 
 ---
 
@@ -638,117 +625,3 @@ Who was Bruno de Finetti, and how does his subjective Bayesian framework — par
 - Add a constraint: "Answer as if you're writing the documentation for a CPDAG resolution tool"
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 17.1 — Two-column illustration of the two sources of undirected
-
-Create a standalone D3 v7 HTML file for Figure Two-column illustration of the two sources of undirected. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-column illustration of the two sources of undirected edges in a CPDAG. Left column: "Source 1 — Markov Equivalence." Shows two Markov-equivalent DAGs (e.g., A → B → C and A ← B → C) with identical conditional independence tables beneath them. Annotation: "Data is equally consistent with both. No amount of observational data distinguishes them. Resolution: expert input or experiment." Right column: "Source 2 — Insufficient Data." Shows a single DAG with a correctly directed edge A → B, then a bar chart of test statistics across sample sizes (n=100, 500, 2000) — the test statistic grows with n. Annotation: "The edge exists but the test lacks power. Resolution: more data." Reader should see that the two sources call for completely different investments.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-01.html`
-
----
-
-### Figure 17.2 — Four-panel step-by-step illustration of PC applied to a
-
-Create a standalone D3 v7 HTML file for Figure Four-panel step-by-step illustration of PC applied to a. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Four-panel step-by-step illustration of PC applied to a five-variable system (A, B, C, D, E). Panel 1: fully connected graph — 10 undirected edges, all present. Panel 2: skeleton after independence tests — 3 edges removed; each removed edge labeled with the conditioning set S that rendered the pair independent (e.g., "A ⊥ E | {B,C}"). Panel 3: v-structure detection — one v-structure (A → C ← D) identified and oriented; two additional edges oriented by propagation rules; undirected edges that remain shown as thin lines. Panel 4: final CPDAG — directed edges in bold, undirected edges in dashed lines. Each panel annotated with the rule applied. Caption: "PC is a sequence of decisions grounded in specific tests, not a black-box transformation. Every edge can be traced to the test that produced it.". Use the described data shape and labels; when exact values are not supplied, use plausib
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-02.html`
-
----
-
-### Figure 17.3 — Two-phase illustration of GES on the same five-variable
-
-Create a standalone D3 v7 HTML file for Figure Two-phase illustration of GES on the same five-variable. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-phase illustration of GES on the same five-variable system. Phase 1 (forward search): starts from empty graph; three steps shown — each step adds one edge with a score improvement bar (+ΔBIC) labeled beside it; graph after forward phase shown with all edges added. Phase 2 (backward search): two steps shown — one removes an edge (score improves, edge unnecessary); one attempts removal but does not improve score (edge kept). Final CPDAG shown. Below the two-phase diagram: side-by-side comparison of PC output and GES output on the same graph, with annotations marking edges where they agree (most) and where they differ (one or two). Caption: "GES and PC approach the same problem from different angles. Agreement across both is stronger evidence than either alone.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that pres
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-03.html`
-
----
-
-### Figure 17.4 — Conceptual illustration of the NOTEARS approach
-
-Create a standalone D3 v7 HTML file for Figure Conceptual illustration of the NOTEARS approach. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two-panel conceptual illustration of the NOTEARS approach. Left panel: "The combinatorial explosion." A vertical bar chart showing number of possible DAGs vs. number of variables: n=5 (1,024), n=10 (4.2 trillion), n=20 (astronomical — bar extends off the chart). Annotation: "Combinatorial search infeasible above ~20 variables for exhaustive methods." Right panel: "The continuous-optimization reframing." A schematic showing (1) a real-valued adjacency matrix W with some cells shaded (nonzero) and some empty (zero = no edge); (2) arrows pointing to two boxes: "Loss function: how well does W fit the data?" and "Acyclicity constraint: tr(e^{W∘W}) − n = 0"; (3) a gradient descent curve converging to a minimum. Caption: "NOTEARS turns a combinatorial search into a calculus problem — at the cost of distributional assumptions the other algorithms do not make.". Use the described data shape and labe
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-04.html`
-
----
-
-### Figure 17.5 — Comparison of PC and FCI output on the
-
-Create a standalone D3 v7 HTML file for Figure Comparison of PC and FCI output on the. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side comparison of PC and FCI output on the same four-variable dataset containing a known latent confounder L (unmeasured) that affects both X1 and X3. Left panel (PC output): CPDAG showing a direct edge X1 → X3, oriented incorrectly because PC interprets the correlation induced by L as a direct relationship. The latent L is shown in a dashed box above the graph with a note "L not in variable set — PC does not know it exists." Right panel (FCI output): PAG showing a bidirected edge X1 ↔ X3 with a label "latent common cause," and circle-marks on two other endpoints where direction is uncertain. Annotation: "PC is confidently wrong. FCI is honestly uncertain." Caption: "FCI's more complex output — bidirected edges, circle marks — is the price of operating correctly when causal sufficiency fails.". Use the described data shape and labels; when exact values are not supplied, use plausible illust
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-05.html`
-
----
-
-### Figure 17.6 — Decision tree for algorithm selection
-
-Create a standalone D3 v7 HTML file for Figure Decision tree for algorithm selection. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Decision tree for algorithm selection. Root node: "Are latent confounders likely in this domain?" Left branch (Yes) → FCI. Right branch (No) → "How many variables?" → Sub-branch: Under ~100 → "Is a defensible scoring criterion required (e.g., regulatory audit)?" → Yes → GES; No → PC. Sub-branch: Over ~100 → NOTEARS (with verification note). Vertical annotation on the right side of the tree, spanning all branches: "In high-stakes settings: run multiple algorithms and compare. Consistent structure = stronger evidence." Each leaf annotated with its primary limitation. Reader should trace any domain description through the tree to a recommended starting point.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-06.html`
-
----
-
-### Figure 17.7 — Illustration of the CPDAG handoff patterns
-
-Create a standalone D3 v7 HTML file for Figure Illustration of the CPDAG handoff patterns. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-panel illustration of the CPDAG handoff patterns. Each panel shows two CPDAGs side by side — "Expert CPDAG" (left) and "Algorithm CPDAG" (right) — connected by a comparison arrow. Panel 1 (Agreement): edges match; directed edges aligned; undirected edges in expert CPDAG are now directed in the algorithm output in the same direction. Annotation: "Proceed to parameterization." Panel 2 (Refinement): expert has one undirected edge A—B; algorithm orients it as A→B; expert's directed edges are confirmed. Annotation: "Accept refinement; confirm with expert; document." Panel 3 (Disagreement): expert has A→B; algorithm shows B→A. The conflicting edge is highlighted in red. Annotation: "Apply three-step resolution protocol." Reader should see that the three patterns call for different next actions.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrati
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-07.html`
-
----
-
-### Figure 17.8 — Flowchart of the three-step resolution protocol
-
-Create a standalone D3 v7 HTML file for Figure Flowchart of the three-step resolution protocol. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Flowchart of the three-step resolution protocol. Entry point: "Algorithm contradicts expert commitment on edge X→Y." Step 1 box: "Test stability — rerun algorithm with varied hyperparameters and bootstrap subsamples." Two exits: (1) "Unstable: orientation flips across runs" → resolution box "Resolve in favor of expert. Data too weak to adjudicate. Document." (2) "Stable: orientation consistent" → Step 2. Step 2 box: "Examine expert commitment for bias (Chapter 15 taxonomy: correlation reasoning, feedback loop simplification, cross-domain import, forced commitment)." Two exits: (1) "Bias detected" → "Algorithm's stable contradiction is credible. Facilitate expert revision." (2) "No recognizable bias" → Step 3. Step 3 box: "Run targeted second elicitation (~15 min). Present data pattern and expert commitment. Ask: 'What would explain the discrepancy?'" Two exits: (1) "Expert updates view" → "
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-08.html`
-
----
-
-### Figure 17.9 — Bootstrap orientation frequency chart for three example edges
-
-Create a standalone D3 v7 HTML file for Figure Bootstrap orientation frequency chart for three example edges. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Bootstrap orientation frequency chart for three example edges. X-axis: orientation frequency (0% to 100%, where 50% = equal split). Y-axis: three edge labels (A—B, C—D, E—F). For each edge, a horizontal bar spans from the left orientation frequency to the right orientation frequency, with a center marker at 50%. Edge A—B: bar spans 48%–52% — nearly perfectly split; labeled "Epistemic — Markov equivalent alternatives." Edge C—D: bar spans 85%–15%; labeled "Aleatory — systematic signal, low power." Edge E—F: bar spans 95%–5%; labeled "Strong signal — likely orientable with current data." Callout: "The position of the bar relative to 50% is the diagnostic." Reader should use this chart type to read any bootstrap orientation result.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-09.html`
-
----
-
-### Figure 17.10 — Decision tree for the more-data / more-experts diagnostic
-
-Create a standalone D3 v7 HTML file for Figure Decision tree for the more-data / more-experts diagnostic. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Decision tree for the more-data / more-experts diagnostic. Entry: "Unresolved ambiguity in the graph (undirected edge or persistent disagreement)." Step 1 box: "Bootstrap the data. Examine orientation stability for the specific edge." Three branches: (1) "~50/50 split — no systematic signal" → "Epistemic uncertainty (Markov equivalence). More data will not resolve. → Expert session or controlled experiment." (2) "Systematic lean (e.g., 70–90%) — signal present but weak" → "Aleatory uncertainty (power). More data targeted at this conditional distribution." (3) "Strong lean (>90%)" → "Likely resolvable — consider accepting current orientation with documentation." Bottom note: "Uncertain which? Run both in parallel: targeted data analysis + short expert session. See which produces clarity first." Reader should use this tree as a field diagnostic.. Use the described data shape and lab
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-10.html`
-
----
-
-### Figure 17.11 — Time-series line chart showing structural drift monitoring over
-
-Create a standalone D3 v7 HTML file for Figure Time-series line chart showing structural drift monitoring over. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Time-series line chart showing structural drift monitoring over 24 months. X-axis: time (months since validation). Y-axis: structural Hamming distance between validated graph and algorithm output on latest data (0 = identical, higher = more different). The line starts near 0 and rises gradually. Two horizontal reference lines: a low threshold (labeled "Review threshold — triggers re-elicitation review") and a high threshold (labeled "Critical threshold — model likely stale"). The line crosses the review threshold at month 14 (annotated: "re-elicitation scheduled") and is shown returning to near 0 after the re-elicitation at month 16. Annotation: "Drift monitoring is structural, not performance-based. A model can drift structurally before performance degrades.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-11.html`
-
----
-
-### Figure 17.12 — Governance lifecycle 
-
-Create a standalone D3 v7 HTML file for Figure Governance lifecycle . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Governance lifecycle — circular flow diagram with five labeled nodes connected by clockwise arrows. Node 1: "Expert Elicitation (Ch. 16)" — artifact produced: initial CPDAG. Node 2: "Algorithm Validation + Resolution Protocol (Ch. 17)" — artifact produced: validated DAG. Node 3: "Version Control" — artifact produced: versioned graph with provenance log. Node 4: "Drift Monitoring" — artifact produced: Hamming/Jaccard distance time-series; alert when threshold exceeded. Node 5: "Re-Elicitation Triggers" — triggers: drift threshold / material business change / scheduled review / anomalous outputs → loops back to Node 1 (targeted re-elicitation). Each arc annotated with what happens at that transition and how long it typically takes. Large caption centered below: "The graph is not delivered. It is governed." Reader should see governance as a continuous cycle, not a one-time project.. Use the described data shape and lab
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-12.html`
-
----
-
-### Figure 17.13 — End-to-end workflow diagram 
-
-Create a standalone D3 v7 HTML file for Figure End-to-end workflow diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: End-to-end workflow diagram — horizontal flow from left (input) to right (output). Left: "Expert CPDAG from Ch. 16 elicitation." Arrow → "Algorithm selection (decision tree from Concept 1)." Arrow → "Run algorithm; produce algorithm CPDAG." Arrow → "Handoff comparison: agreement / refinement / disagreement?" → For disagreement: "Three-step resolution protocol (Concept 2)." → For remaining ambiguity: "Aleatory/epistemic diagnostic (Concept 3) → more data or more experts?" → "Validated DAG." Arrow → "Version control + provenance." Arrow → "Drift monitoring + re-elicitation triggers (Concept 4)." Final node at right: "Living Model instrument — continuously governed." Beneath the linear flow: a return arrow from "re-elicitation triggers" back to "Expert CPDAG," representing the governance cycle. Caption: "From interview to instrument: a structured workflow with no shortcuts.". Use the described data shape and lab
-
-> Reference implementation: `d3/17-resolving-the-graph-fig-13.html`

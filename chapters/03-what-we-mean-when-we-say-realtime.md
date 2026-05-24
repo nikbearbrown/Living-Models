@@ -41,7 +41,6 @@ Three engineers, three meanings, one word. The problem is not that any of these 
 
 ![Figure 3.1 — Three-column portrait layout](images/03-what-we-mean-when-we-say-realtime-fig-01.jpg)
 
-
 When you encounter a "real-time" claim in practice, your job as a practitioner is to decompose it. The word is a placeholder. Behind it are three independent numbers. Until you know all three, you do not know what the system can actually tell you or how quickly you can act on it.
 
 ---
@@ -67,7 +66,6 @@ Data latency is the most commonly measured and most frequently cited latency bec
 
 ![Figure 3.2 — Horizontal pipeline](images/03-what-we-mean-when-we-say-realtime-fig-02.jpg)
 
-
 ### Model Latency
 
 Model latency is the time between the system having access to current data and the model that scores it being itself current.
@@ -85,7 +83,6 @@ This is not a hypothetical failure mode. It is the normal state of production ma
 
 ![Figure 3.3 — Horizontal timeline](images/03-what-we-mean-when-we-say-realtime-fig-03.jpg)
 
-
 ### Decision Latency
 
 Decision latency is the time between the model producing a recommendation and a human or another system acting on it.
@@ -101,7 +98,6 @@ Decision latency is frequently confused with organizational process because it o
 
 ![Figure 3.4 — Swimlane flow](images/03-what-we-mean-when-we-say-realtime-fig-04.jpg)
 
-
 ### The Pipeline Moves at the Rate of Its Slowest Segment
 
 The three latencies compound. A system with data latency of one hour, model latency of three months, and decision latency of one week is not a real-time system. The data layer is doing fine work; the other two layers are defeating it.
@@ -112,7 +108,6 @@ Here is the structural principle: **the effective latency of a decision system i
 *Figure 3.5 — Three stacked horizontal bars representing a single system*
 
 ![Figure 3.5 — Three stacked horizontal bars representing a single system](images/03-what-we-mean-when-we-say-realtime-fig-05.jpg)
-
 
 This principle has a practical corollary: when you are auditing a system and trying to identify where its real-time claim breaks down, you do not need to find all three failures. You need to find the binding constraint. Fix the binding constraint and the next-slowest segment becomes the new binding constraint. The audit is a search for the slowest segment, conducted in order from the most-visible (data latency) to the least-visible (model latency, then decision latency).
 
@@ -143,7 +138,6 @@ Auditing the technical layer means asking: at what frequency does fresh data bec
 
 ![Figure 3.6 — Architecture diagram of a streaming system](images/03-what-we-mean-when-we-say-realtime-fig-06.jpg)
 
-
 ### The Organizational Layer
 
 The organizational layer is where most continually-updated systems break down in practice. It covers decision latency — whether the people or systems authorized to act on the model's output can act at a speed that matches the technical layer.
@@ -158,7 +152,6 @@ Auditing the organizational layer means asking: who has the authority to act on 
 *Figure 3.7 — Two side-by-side process flowcharts using the same pricing*
 
 ![Figure 3.7 — Two side-by-side process flowcharts using the same pricing model as input. Left ("authority pushed down"): model output → analyst acts directly → price updated; total elapsed: ~15 minutes. Right ("authority held above"): model output → analyst brief → pricing committee agenda → weekly meeting → approval → implementation; total elapsed: ~7 days. Both diagrams use identical model and data components](images/03-what-we-mean-when-we-say-realtime-fig-07.jpg)
-
 
 ### The Epistemic Layer
 
@@ -190,7 +183,6 @@ Auditing the epistemic layer means asking: when the model produces an output, wh
 | **Row 2** | _fill in_ | _fill in_ |
 
 : {.infographic-table}
-
 
 ---
 
@@ -253,7 +245,6 @@ The audit finding is not "this system needs better technology." It is "this syst
 
 : {.data-table}
 
-
 ### The Audit Protocol in General Form
 
 The worked example generalizes. Here is the protocol in its abstract form:
@@ -272,7 +263,6 @@ The protocol produces a diagnosis, not a verdict. The diagnosis names the specif
 *Figure 3.10 — The seven-step audit protocol as a vertical checklist*
 
 ![Figure 3.10 — The seven-step audit protocol as a vertical checklist](images/03-what-we-mean-when-we-say-realtime-fig-10.jpg)
-
 
 ---
 
@@ -314,7 +304,6 @@ This is the structural move the chapter has been building toward. "Real-time" fo
 | **Row 2** | _fill in_ | _fill in_ |
 
 : {.infographic-table}
-
 
 ---
 
@@ -559,77 +548,3 @@ Who was Konrad Zuse, and how do the design choices in the Z3 (1941) and the Plan
 - Add a constraint: "Answer as if you're auditing a vendor's claim that their system is real-time"
 
 What changes? What gets better? What gets worse?
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 3.1 — Three-column portrait layout 
-
-Create a standalone D3 v7 HTML file for Figure Three-column portrait layout . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-column portrait layout — one column per engineer, each showing their job title, their definition of "real-time," the specific latency they are describing (data / model / decision), and a callout box listing what their definition leaves unspecified. The infographic should make visible at a glance that three internally coherent definitions are mutually incompatible.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-01.html`
-
----
-
-### Figure 3.2 — Horizontal pipeline 
-
-Create a standalone D3 v7 HTML file for Figure Horizontal pipeline . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Horizontal pipeline — point of sale → authorization system → ingestion → feature store → model query — with two parallel tracks: one labeled "high-frequency (fraud detection)" showing ms-level latency at each hop, one labeled "batch analytics" showing hour-level latency at each hop. Reader should see that data latency is the sum of all hops, not just the final one, and that the two tracks share the same shape but differ by four orders of magnitude.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-02.html`
-
----
-
-### Figure 3.3 — Horizontal timeline 
-
-Create a standalone D3 v7 HTML file for Figure Horizontal timeline . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Horizontal timeline — left anchor: model training cutoff; middle: deployment date; right: today. The gap between training cutoff and today is shaded and labeled "model latency." Two callout arrows point into the shaded gap: one labeled "new fraud patterns emerge," one labeled "distribution shift begins." A small UI mockup in the corner shows that nothing on the dashboard surface reflects this gap — the reader should see that model latency is invisible from the outside.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-03.html`
-
----
-
-### Figure 3.4 — Swimlane flow 
-
-Create a standalone D3 v7 HTML file for Figure Swimlane flow . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Swimlane flow — two lanes: "technical pipeline" (model scores → alert generated, elapsed: 100ms) and "organizational pipeline" (alert enters queue → analyst shift begins → analyst reviews → decision made → action taken, elapsed: up to 12 hours). The swimlane makes visible that the technical system finishes almost instantly and then waits. Annotate with a contrasting "well-designed" version in which the action lane runs in minutes.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-04.html`
-
----
-
-### Figure 3.5 — Three stacked horizontal bars representing a single system
-
-Create a standalone D3 v7 HTML file for Figure Three stacked horizontal bars representing a single system. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three stacked horizontal bars representing a single system — data latency (short, green), model latency (long, amber), decision latency (medium, red) — with a total effective latency bar at the bottom showing their sum. A callout reads: "The system is as fast as the longest bar, not the shortest." Include a second version of the same system with model latency reduced to match the others, showing how the binding constraint shifts.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-05.html`
-
----
-
-### Figure 3.6 — Architecture diagram of a streaming system 
-
-Create a standalone D3 v7 HTML file for Figure Architecture diagram of a streaming system . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Architecture diagram of a streaming system — event source → Kafka topic → Flink stream processor → feature store → model serving layer → scored output. Annotate each arrow with a latency budget (e.g., event capture: <1s; feature store write: <100ms; model inference: <50ms). Add a second "batch" version of the same architecture for contrast, showing where ETL and overnight jobs replace the streaming components. Reader should see which components are shared and which are swapped.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-06.html`
-
----
-
-### Figure 3.7 — Two side-by-side process flowcharts using the same pricing
-
-Create a standalone D3 v7 HTML file for Figure Two side-by-side process flowcharts using the same pricing. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Two side-by-side process flowcharts using the same pricing model as input. Left ("authority pushed down"): model output → analyst acts directly → price updated; total elapsed: ~15 minutes. Right ("authority held above"): model output → analyst brief → pricing committee agenda → weekly meeting → approval → implementation; total elapsed: ~7 days. Both diagrams use identical model and data components — the only difference is the decision path. Callout: "The model is the same. The latency is determined entirely by where decision rights sit.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-07.html`
-
----
-
-### Figure 3.10 — The seven-step audit protocol as a vertical checklist
-
-Create a standalone D3 v7 HTML file for Figure The seven-step audit protocol as a vertical checklist. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: The seven-step audit protocol as a vertical checklist — each step numbered and labeled, with a one-line description of the output each step produces (e.g., Step 1 output: "a number in seconds, minutes, or hours"; Step 7 output: "a structured finding statement"). This should be designed as a reference card the practitioner can return to when auditing a real system.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-10.html`
