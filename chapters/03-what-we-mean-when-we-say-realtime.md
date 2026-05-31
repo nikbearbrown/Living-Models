@@ -548,3 +548,77 @@ Who was Konrad Zuse, and how do the design choices in the Z3 (1941) and the Plan
 - Add a constraint: "Answer as if you're auditing a vendor's claim that their system is real-time"
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1 — Three-column portrait layout
+
+Create a standalone D3 v7 HTML figure for "Three-column portrait layout". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-01.html`
+
+---
+
+### Figure 2 — Horizontal pipeline
+
+Create a standalone D3 v7 HTML figure for "Horizontal pipeline". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-02.html`
+
+---
+
+### Figure 3 — Horizontal timeline
+
+Create a standalone D3 v7 HTML figure for "Horizontal timeline". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-03.html`
+
+---
+
+### Figure 4 — Swimlane flow
+
+Create a standalone D3 v7 HTML figure for "Swimlane flow". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-04.html`
+
+---
+
+### Figure 5 — Three stacked horizontal bars representing a single system
+
+Create a standalone D3 v7 HTML figure for "Three stacked horizontal bars representing a single system". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-05.html`
+
+---
+
+### Figure 6 — Architecture diagram of a streaming system
+
+Create a standalone D3 v7 HTML figure for "Architecture diagram of a streaming system". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-06.html`
+
+---
+
+### Figure 7 — Two side-by-side process flowcharts using the same pricing
+
+Create a standalone D3 v7 HTML figure for "Two side-by-side process flowcharts using the same pricing". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-07.html`
+
+---
+
+### Figure 10 — The seven-step audit protocol as a vertical checklist
+
+Create a standalone D3 v7 HTML figure for "The seven-step audit protocol as a vertical checklist". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/03-what-we-mean-when-we-say-realtime-fig-10.html`

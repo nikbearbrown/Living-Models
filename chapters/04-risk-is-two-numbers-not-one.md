@@ -595,3 +595,61 @@ Who was Frank Knight, and how does his 1921 distinction between measurable risk 
 - Add a constraint: "Answer as if you're writing the case against COSO ERM-style heat maps for a board"
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1 — Timeline of LTCM's 1998 crisis
+
+Create a standalone D3 v7 HTML figure for "Timeline of LTCM's 1998 crisis". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/04-risk-is-two-numbers-not-one-fig-01.html`
+
+---
+
+### Figure 2 — Two-axis scatter plot
+
+Create a standalone D3 v7 HTML figure for "Two-axis scatter plot". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/04-risk-is-two-numbers-not-one-fig-02.html`
+
+---
+
+### Figure 3 — Vertical bar chart
+
+Create a standalone D3 v7 HTML figure for "Vertical bar chart". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/04-risk-is-two-numbers-not-one-fig-03.html`
+
+---
+
+### Figure 6 — 5×5 heat map
+
+Create a standalone D3 v7 HTML figure for "5×5 heat map". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/04-risk-is-two-numbers-not-one-fig-06.html`
+
+---
+
+### Figure 9 — Grouped bar chart
+
+Create a standalone D3 v7 HTML figure for "Grouped bar chart". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/04-risk-is-two-numbers-not-one-fig-09.html`
+
+---
+
+### Figure 7 — Dashboard mockup showing the complete EVI deliverable for
+
+Create a standalone D3 v7 HTML figure for "Dashboard mockup showing the complete EVI deliverable for". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/04-risk-is-two-numbers-not-one-fig-07.html`

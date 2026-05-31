@@ -368,3 +368,29 @@ Who was Charles Sanders Peirce, and how does his concept of *abduction* — the 
 - Add a constraint: "Answer as if you're writing a footnote in a chapter on the but-for test"
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1 — Pearl's Ladder revisited from Chapter 1, now annotated
+
+Create a standalone D3 v7 HTML figure for "Pearl's Ladder revisited from Chapter 1, now annotated". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/09-the-counterfactual-fig-01.html`
+
+---
+
+### Figure 4 — Each inner ring requires strictly more from the model than the ring...
+
+Create a standalone D3 v7 HTML figure for "Each inner ring requires strictly more from the model than the ring...". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/09-the-counterfactual-fig-04.html`

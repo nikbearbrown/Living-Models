@@ -1,8 +1,7 @@
 ---
 title: "Living Models"
 subtitle: "Causal Intelligence for the Decisions That Actually Matter"
-author:
-  - Nik Bear Brown
+author: "Chris Selland & Nik Bear Brown"
 date: 2026
 lang: en-US
 description: |
@@ -14,8 +13,8 @@ description: |
   loop that takes an executive from a validated graph through ranked
   interventions to a four-part decision report and the DecisionOps that keep
   the model honest after deployment.
-rights: © 2026 Nik Bear Brown. All rights reserved.
-publisher: Bear Brown LLC
+rights: "Copyright © 2026 Chris Selland & Nik Bear Brown. All rights reserved."
+publisher: "Bear Brown, LLC"
 subject:
   - Causal Inference — Practical
   - Decision Intelligence

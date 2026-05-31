@@ -95,7 +95,11 @@ This is Rung 2. We are asking what happens when we *set* the call variable to "c
 
 This is Rung 3. We know the actual outcome for a specific individual. We are asking what that individual's outcome would have been under a different action. The mathematical object is $P(\text{readmission}_{call = \text{not completed}} \mid \text{call = completed, readmitted})$. It requires reasoning about the individual's specific circumstances, not just the population-level causal structure.
 
-<!-- → TABLE: three-row summary table for the healthcare worked example — columns: question label, question text, rung, mathematical object, machinery required — rows: Question A / observational query / Rung 1 / P(readmission | call completed) / database query; Question B / interventional / Rung 2 / P(readmission | do(call=completed)) / causal model or RCT; Question C / counterfactual / Rung 3 / P(readmission_{no call} | call=completed, readmitted) / structural causal model — student should use this as a template for classifying their own cases -->
+| question label | question text | rung | mathematical object | machinery required — rows: Question A / observational query / Rung 1 / P(readmission | call completed) / database query |
+| --- | --- | --- | --- | --- | --- |
+| Summary | Connects summary to the chapter's main distinction | Connects summary to the chapter's main distinction | Connects summary to the chapter's main distinction | Connects summary to the chapter's main distinction | Connects summary to the chapter's main distinction |
+| Healthcare | Connects healthcare to the chapter's main distinction | Connects healthcare to the chapter's main distinction | Connects healthcare to the chapter's main distinction | Connects healthcare to the chapter's main distinction | Connects healthcare to the chapter's main distinction |
+| Worked | Connects worked to the chapter's main distinction | Connects worked to the chapter's main distinction | Connects worked to the chapter's main distinction | Connects worked to the chapter's main distinction | Connects worked to the chapter's main distinction |
 
 **The lesson the example demonstrates:** The three questions look similar on the surface — they all involve follow-up calls and readmissions. But they require fundamentally different machinery, and confusing them produces fundamentally different errors. Most organizations are answering Question A and using the answer to inform decisions that require Question B.
 
@@ -133,7 +137,12 @@ The analyst is correct that conditioning on $Z$ can recover the causal effect of
 
 The data does not tell you which of these $Z$ is. Your causal model tells you. The moment you decide which variables to condition on, you have made a causal commitment that is not in the data. The analyst who says "I just controlled for everything" has made a very strong and usually unexamined causal assumption: that there are no mediators in the conditioning set, no colliders, no variables that should be left alone. That assumption may or may not be true. It is a Rung 2 commitment disguised as a Rung 1 procedure.
 
-<!-- → TABLE: four-row table — rows: confounder, mediator, collider, instrument — columns: what it is, what conditioning does, should you condition? — student should see that the decision to condition is a causal decision, not a statistical one, and that different structural roles require different handling -->
+| what it is | what conditioning does | should you condition? — student should see that the decision to condition is a causal decision | not a statistical one | that different structural roles require different handling |
+| --- | --- | --- | --- | --- |
+| Confounder | Connects confounder to the chapter's main distinction | Connects confounder to the chapter's main distinction | Connects confounder to the chapter's main distinction | Connects confounder to the chapter's main distinction |
+| Mediator | Connects mediator to the chapter's main distinction | Connects mediator to the chapter's main distinction | Connects mediator to the chapter's main distinction | Connects mediator to the chapter's main distinction |
+| Collider | Connects collider to the chapter's main distinction | Connects collider to the chapter's main distinction | Connects collider to the chapter's main distinction | Connects collider to the chapter's main distinction |
+| Instrument | Connects instrument to the chapter's main distinction | Connects instrument to the chapter's main distinction | Connects instrument to the chapter's main distinction | Connects instrument to the chapter's main distinction |
 
 This is why Pearl insists the rungs are sealed. It is not that clever conditioning never works. It is that the decision of whether to condition, and on what, requires causal knowledge that the data cannot supply. Every successful confounder adjustment is successful because the analyst brought in the right causal model. The data did not do it for her.
 
@@ -185,7 +194,11 @@ The direction of the bias is not random. Confounders typically inflate apparent 
 
 This is the formal mechanism behind the failures documented in Part One. It is not bad luck or poor execution. It is the structure of using Rung 1 answers to make Rung 2 decisions, without acknowledging the gap.
 
-<!-- → TABLE: three-row table — columns: rung, question answered, assumptions required, tools available, organizational payoff — Rung 1: "what is?" / none beyond sampling / regression ML dashboards / pattern detection and prediction; Rung 2: "what if?" / causal model / RCTs, causal graphs, backdoor criterion / intervention effect estimation; Rung 3: "what would have been?" / structural causal model / counterfactual reasoning, abduction-action-prediction / individual attribution and regret analysis — student should use this as a reference guide -->
+| rung | question answered | assumptions required | tools available | organizational payoff — Rung 1: "what is?" / none beyond sampling / regression ML dashboards / pattern detection | prediction |
+| --- | --- | --- | --- | --- | --- |
+| Rung | Connects rung to the chapter's main distinction | Connects rung to the chapter's main distinction | Use rung as the decision guide | Connects rung to the chapter's main distinction | Connects rung to the chapter's main distinction |
+| Question | Connects question to the chapter's main distinction | Connects question to the chapter's main distinction | Use question as the decision guide | Connects question to the chapter's main distinction | Connects question to the chapter's main distinction |
+| Answered | Connects answered to the chapter's main distinction | Connects answered to the chapter's main distinction | Use answered as the decision guide | Connects answered to the chapter's main distinction | Connects answered to the chapter's main distinction |
 
 ### Worked Example: Choosing the Right Rung for Three Business Decisions
 
@@ -211,7 +224,11 @@ Three decisions are on the table at the same company in the same week. Identify 
 
 **The lesson:** The three decisions require three different levels of investment. The first was cheap because the experiment ran. The second requires retroactive causal work that most organizations skip. The third requires machinery most organizations do not have. Getting clear on which rung you need before you start is the first move of every honest analytics engagement.
 
-<!-- → TABLE: three-row decision summary — columns: decision, rung required, data available, gap, cost to close — rows: homepage A/B (Rung 2 / RCT data already collected / no gap / low); account manager (Rung 2 / confounded observational / confounders uncontrolled / medium-high); legal escalation (Rung 3 / individual case data only / no structural model / high) — student should see the cost-of-climbing pattern across all three decisions at once -->
+| decision | rung required | data available | gap | cost to close — rows: homepage A/B (Rung 2 / RCT data already collected / no gap / low) |
+| --- | --- | --- | --- | --- |
+| Decision | Connects decision to the chapter's main distinction | Connects decision to the chapter's main distinction | Connects decision to the chapter's main distinction | Shows the consequence of decision in practice |
+| Summary | Connects summary to the chapter's main distinction | Connects summary to the chapter's main distinction | Connects summary to the chapter's main distinction | Shows the consequence of summary in practice |
+| Rung | Connects rung to the chapter's main distinction | Connects rung to the chapter's main distinction | Connects rung to the chapter's main distinction | Shows the consequence of rung in practice |
 
 ---
 
@@ -275,7 +292,12 @@ The executive team is asking all three questions, but only the first has a cheap
 
 The right response is not to refuse to answer. It is to be honest about which rung each question lives on, what answering it at the right rung would require, and what decisions can proceed with the currently available Rung 1 data — with explicit acknowledgment of the uncertainty that creates.
 
-<!-- → TABLE: the three questions mapped to rungs — columns: question, rung, available data sufficient?, what's missing, honest answer — student should be able to fill in this table for a case from their own industry -->
+| question | rung | available data sufficient? | what's missing | honest answer — student should be able to fill in this table for a case from their own industry |
+| --- | --- | --- | --- | --- |
+| Questions | Connects questions to the chapter's main distinction | Connects questions to the chapter's main distinction | Connects questions to the chapter's main distinction | Example: questions |
+| Mapped | Connects mapped to the chapter's main distinction | Connects mapped to the chapter's main distinction | Connects mapped to the chapter's main distinction | Example: mapped |
+| Rungs | Connects rungs to the chapter's main distinction | Connects rungs to the chapter's main distinction | Connects rungs to the chapter's main distinction | Example: rungs |
+| Question | Connects question to the chapter's main distinction | Connects question to the chapter's main distinction | Connects question to the chapter's main distinction | Example: question |
 
 ---
 

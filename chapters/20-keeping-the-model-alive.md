@@ -69,7 +69,11 @@ The response to structural drift is re-elicitation — not necessarily a full Ch
 
 Mechanism failure is the most disruptive mode. The very causal mechanism the model was built around stops functioning the way it did — not because the parameters shifted, not because a new mechanism overlaid the old one, but because the fundamental dynamics the model encoded have been disrupted. The pandemic that collapsed restaurant demand. The geopolitical event that reordered energy markets. The AI-native shift in software development costs. Each of these was a moment when many models died because their foundational causal commitments had become inappropriate to the world they were operating in.
 
-<!-- → TABLE: three-row comparison table — columns: mode of decay, what changes, what stays the same, symptom pattern, maintenance response — rows: Parametric drift (edge parameter magnitudes / diagram structure and mechanisms / consistent proportional gaps across predictions / Bayesian parameter updating); Structural drift (which edges exist / some mechanisms still valid / concentrated gaps in specific model sections / targeted re-elicitation of affected graph portion); Mechanism failure (fundamental causal dynamics / nothing structural survives intact / widespread systematic failure across recommendations / full model rebuild with new elicitation) — student should use this as the primary diagnostic reference -->
+| mode of decay | what changes | what stays the same | symptom pattern | maintenance response — rows: Parametric drift (edge parameter magnitudes / diagram structure | mechanisms / consistent proportional gaps across predictions / Bayesian parameter updating) |
+| --- | --- | --- | --- | --- | --- |
+| Comparison | Connects comparison to the chapter's main distinction | Connects comparison to the chapter's main distinction | Connects comparison to the chapter's main distinction | Use comparison as the decision guide | Use comparison as the decision guide |
+| Mode | Connects mode to the chapter's main distinction | Connects mode to the chapter's main distinction | Connects mode to the chapter's main distinction | Use mode as the decision guide | Use mode as the decision guide |
+| Decay | Connects decay to the chapter's main distinction | Connects decay to the chapter's main distinction | Connects decay to the chapter's main distinction | Use decay as the decision guide | Use decay as the decision guide |
 
 Mechanism failure cannot be handled within the existing architecture. The response is a rebuild — new elicitation, new structure, new parameterization — conducted with the understanding that the prior model's commitments are not a useful starting point. This is expensive and disruptive, and the discipline of structural change detection is designed in part to give early warning before parametric and structural drift accumulate into mechanism failure.
 
@@ -163,7 +167,12 @@ The differences are four, and each has practical implications for how the mainte
 
 **MLOps can accept human review at consumption; DecisionOps requires it throughout.** A predictive model can be checked by a human only when the output is consumed. A Living Model requires human review at multiple points: the named owner decides whether to execute the recommendation; the domain expert adjudicates structural change flags; the audit record is periodically reviewed by people with the authority to challenge the model's commitments. The maintenance team has to support all of these review points, with appropriate tooling and escalation paths.
 
-<!-- → TABLE: four-row comparison table — columns: dimension, MLOps, DecisionOps — rows: (1) primary metric (prediction accuracy / decision quality vs. counterfactual baseline); (2) assumption about world (stable data-generating process / contested, model-shaped environment); (3) primary artifact (model weights and versioning / recommendation pipeline including elicitation, parameterization, report); (4) human review integration (at output consumption / at multiple pipeline stages with named owners and escalation paths) — student should be able to use this table to identify which operational practice a given monitoring activity belongs to -->
+| dimension | MLOps | DecisionOps — rows: (1) primary metric (prediction accuracy / decision quality vs |
+| --- | --- | --- |
+| Comparison | Connects comparison to the chapter's main distinction | Connects comparison to the chapter's main distinction |
+| Dimension | Connects dimension to the chapter's main distinction | Connects dimension to the chapter's main distinction |
+| Mlops | Connects mlops to the chapter's main distinction | Connects mlops to the chapter's main distinction |
+| Decisionops | Connects decisionops to the chapter's main distinction | Connects decisionops to the chapter's main distinction |
 
 ### Worked Example: The DecisionOps vs. MLOps Distinction in Practice
 
@@ -218,7 +227,12 @@ The logistics company's Thursday team now has the full maintenance architecture.
 
 *Step 4 — Update the DecisionOps monitoring.* Regardless of the immediate diagnosis, the Thursday meeting reveals that the monitoring practice is insufficient. Decision-quality tracking was not in place; component-level gap monitoring was not in place. The team should add both before the next review period.
 
-<!-- → TABLE: Thursday meeting action plan — columns: step, question to answer, data required, who owns it, outcome — rows: (1) Classify decay mode / Is the gap proportional or concentrated? / Component-level prediction vs. outcome breakdown / Analytics lead / Parametric, structural, or failure classification; (2) Apply maintenance response / What does the classification require? / Classification from step 1 + domain expert availability / Analytics lead + operations expert / Parameter update or re-elicitation initiated; (3) Check loop integrity / Can we trace recommendation → action → outcome? / System audit of logging linkages / Engineering lead / Loop gaps identified and remediation scheduled; (4) Update DecisionOps monitoring / What monitors were missing? / Current monitoring spec / Analytics + engineering leads / Two new monitors added before next review cycle — student should be able to use this as a template for their own deployment reviews -->
+| step | question to answer | data required | who owns it | outcome — rows: (1) Classify decay mode / Is the gap proportional or concentrated? / Component-level prediction vs |
+| --- | --- | --- | --- | --- |
+| Thursday | Connects thursday to the chapter's main distinction | Connects thursday to the chapter's main distinction | Connects thursday to the chapter's main distinction | Connects thursday to the chapter's main distinction |
+| Meeting | Connects meeting to the chapter's main distinction | Connects meeting to the chapter's main distinction | Connects meeting to the chapter's main distinction | Connects meeting to the chapter's main distinction |
+| Action | Connects action to the chapter's main distinction | Connects action to the chapter's main distinction | Connects action to the chapter's main distinction | Connects action to the chapter's main distinction |
+| Plan | Connects plan to the chapter's main distinction | Connects plan to the chapter's main distinction | Connects plan to the chapter's main distinction | Connects plan to the chapter's main distinction |
 
 **The lesson:** Maintenance is not a one-time corrective action. It is a system that runs continuously, catches degradation early, and applies graduated responses. The Thursday meeting is a symptom of insufficient maintenance infrastructure, not just a problem to be solved. Solving the immediate problem without building the infrastructure will produce the same meeting in six months.
 

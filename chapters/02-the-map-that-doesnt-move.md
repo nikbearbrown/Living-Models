@@ -53,7 +53,12 @@ The implicit promise is: *the new situations are like the old situations, in the
 
 When that promise holds, the model is useful. When it breaks, the model becomes confidently wrong — which is worse than being uncertain, because confidence suppresses the doubt that might prompt you to check.
 
-<!-- → TABLE: simple two-column table — left column: "What the model sees (training data)," right column: "What the decision requires (deployment scenario)" — rows for: data source, who controls X, relationship between X and Y, model's confidence — student should see that the model's confidence is constant even as the underlying validity shifts -->
+| What the model sees (training data) |  right column: "What the decision requires (deployment scenario)" — rows for: data source | who controls X | relationship between X | Y | model's confidence — student should see that the model's confidence is constant even as the underlying validity shifts |
+| --- | --- | --- | --- | --- | --- |
+| Model | Connects model to the chapter's main distinction | Connects model to the chapter's main distinction | Connects model to the chapter's main distinction | Connects model to the chapter's main distinction | Connects model to the chapter's main distinction |
+| Sees | Connects sees to the chapter's main distinction | Connects sees to the chapter's main distinction | Connects sees to the chapter's main distinction | Connects sees to the chapter's main distinction | Connects sees to the chapter's main distinction |
+| Training | Connects training to the chapter's main distinction | Connects training to the chapter's main distinction | Connects training to the chapter's main distinction | Connects training to the chapter's main distinction | Connects training to the chapter's main distinction |
+| Data | Connects data to the chapter's main distinction | Connects data to the chapter's main distinction | Connects data to the chapter's main distinction | Connects data to the chapter's main distinction | Connects data to the chapter's main distinction |
 
 The technical language for what the model fits is the **observational distribution**: $P(Y \mid X)$. Read this as: "the probability of outcome $Y$, given that we observe input $X$ in the data." The vertical bar "|" means "given that." Everything to the right of it is a condition that was *observed* in the historical record — not chosen, not set by fiat, just present.
 
@@ -149,7 +154,11 @@ Intervention occurs when someone — typically the model's deployer — delibera
 
 The key distinction from concept drift is *agency*. Concept drift happens to you. Intervention is something you do. The failure mode in concept drift is that you didn't update fast enough. The failure mode in intervention is that you didn't ask the right question before you acted.
 
-<!-- → TABLE: three-row comparison table — columns: mechanism, trigger, symptom, appropriate response — rows: concept drift (world changes on its own / model accuracy degrades uniformly / retrain), covariate shift (input distribution shifts / model uncertain in new input regions / reweight or collect data), intervention (deployer sets a variable by fiat / model confident but systematically wrong / causal re-analysis before acting) — student should be able to classify a given failure into one of these three rows -->
+| mechanism | trigger | symptom | appropriate response — rows: concept drift (world changes on its own / model accuracy degrades uniformly / retrain) | covariate shift (input distribution shifts / model uncertain in new input regions / reweight or collect data) | intervention (deployer sets a variable by fiat / model confident but systematically wrong / causal re-analysis before acting) — student should be able to classify a given failure into one of these three rows |
+| --- | --- | --- | --- | --- | --- |
+| Comparison | Connects comparison to the chapter's main distinction | Connects comparison to the chapter's main distinction | Use comparison as the decision guide | Connects comparison to the chapter's main distinction | Fails when comparison is treated as settled instead of checked |
+| Mechanism | Connects mechanism to the chapter's main distinction | Connects mechanism to the chapter's main distinction | Use mechanism as the decision guide | Connects mechanism to the chapter's main distinction | Fails when mechanism is treated as settled instead of checked |
+| Trigger | Connects trigger to the chapter's main distinction | Connects trigger to the chapter's main distinction | Use trigger as the decision guide | Connects trigger to the chapter's main distinction | Fails when trigger is treated as settled instead of checked |
 
 The Living Model architecture's handling of intervention is the subject of Part Three. For now, the essential point is that a model can be current, well-calibrated on recent data, not suffering from concept drift or covariate shift — and still be deeply wrong about the consequence of an intervention, because the intervention severs relationships the model took for granted.
 

@@ -308,3 +308,45 @@ Who was Sewall Wright, and how does his 1918 invention of path analysis — and 
 - Add a constraint: "Answer as if you're writing the rationale for using a DAG instead of a regression equation in a board memo"
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1 — Two side-by-side representations of the same X–Y relationship
+
+Create a standalone D3 v7 HTML figure for "Two side-by-side representations of the same X–Y relationship". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/06-graphs-that-think-fig-01.html`
+
+---
+
+### Figure 2 — Three candidate DAGs for the ice cream–drowning correlation
+
+Create a standalone D3 v7 HTML figure for "Three candidate DAGs for the ice cream–drowning correlation". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/06-graphs-that-think-fig-02.html`
+
+---
+
+### Figure 3 — Intervention is surgery on the model, not observation of the world
+
+Create a standalone D3 v7 HTML figure for "Intervention is surgery on the model, not observation of the world". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/06-graphs-that-think-fig-03.html`
+
+---
+
+### Figure 4 — The three Markov-equivalent two-node structures
+
+Create a standalone D3 v7 HTML figure for "The three Markov-equivalent two-node structures". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/06-graphs-that-think-fig-04.html`

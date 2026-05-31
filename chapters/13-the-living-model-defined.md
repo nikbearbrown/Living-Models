@@ -143,7 +143,13 @@ The Living Model's output is the treatment ranking. The recommendation is *do th
 
 With the four properties defined, we can return to the wall of screens and say precisely what each system is and is not.
 
-<!-- → TABLE: five-row classification table — columns: system type, Causal?, Counterfactual?, Continually Updated?, Treatment-Oriented?, Score — rows: Dashboard (No / No / Partially (data refreshes, no structure) / No / 0 of 4); Predictive model (No / No / Partially (retraining schedules) / No / 0–0.5 of 4); Digital twin — 3D mirror type (No / Partially (scenario simulation) / Yes / No / 1–1.5 of 4); Ontological system / knowledge graph (No / No / No (stable by design) / No / 0 of 4); Living Model (Yes / Yes / Yes / Yes / 4 of 4) — student should use this as a reference classification and understand that "partially" is not the same as "yes" -->
+| system type | Causal? | Counterfactual? | Continually Updated? | Treatment-Oriented? | Score — rows: Dashboard (No / No / Partially (data refreshes |
+| --- | --- | --- | --- | --- | --- |
+| Classification | Connects classification to the chapter's main distinction | Connects classification to the chapter's main distinction | Connects classification to the chapter's main distinction | Connects classification to the chapter's main distinction | Connects classification to the chapter's main distinction |
+| System | Connects system to the chapter's main distinction | Connects system to the chapter's main distinction | Connects system to the chapter's main distinction | Connects system to the chapter's main distinction | Connects system to the chapter's main distinction |
+| Type | Connects type to the chapter's main distinction | Connects type to the chapter's main distinction | Connects type to the chapter's main distinction | Connects type to the chapter's main distinction | Connects type to the chapter's main distinction |
+| Causal | Connects causal to the chapter's main distinction | Connects causal to the chapter's main distinction | Connects causal to the chapter's main distinction | Connects causal to the chapter's main distinction | Connects causal to the chapter's main distinction |
+| Counterfactual | Connects counterfactual to the chapter's main distinction | Connects counterfactual to the chapter's main distinction | Connects counterfactual to the chapter's main distinction | Connects counterfactual to the chapter's main distinction | Connects counterfactual to the chapter's main distinction |
 
 The classification is not pejorative. Each system is doing something useful. A dashboard provides situational awareness — it reports current values of metrics and shows trends. It does exactly what it was designed to do. The point is that it does not do what the CEO's question requires.
 

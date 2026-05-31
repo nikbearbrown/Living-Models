@@ -285,3 +285,37 @@ Who was Gertrude Cox, and how does her work on experimental design and statistic
 - Add a constraint: "Answer as if you're writing the introduction to a chapter on identifying causal effects from observational data"
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1 — The backdoor criterion identifies what to adjust for and what to leave alone
+
+Create a standalone D3 v7 HTML figure for "The backdoor criterion identifies what to adjust for and what to leave alone". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/08-estimating-effects-fig-01.html`
+
+---
+
+### Figure 3 — DML separates the structural question (which Z to adjust for) from the...
+
+Create a standalone D3 v7 HTML figure for "DML separates the structural question (which Z to adjust for) from the...". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/08-estimating-effects-fig-03.html`
+
+---
+
+### Figure 4 — The average hides the segmentation that makes the decision tractable
+
+Create a standalone D3 v7 HTML figure for "The average hides the segmentation that makes the decision tractable". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/08-estimating-effects-fig-04.html`

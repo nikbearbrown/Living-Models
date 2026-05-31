@@ -625,3 +625,117 @@ Who was Bruno de Finetti, and how does his subjective Bayesian framework — par
 - Add a constraint: "Answer as if you're writing the documentation for a CPDAG resolution tool"
 
 What changes? What gets better? What gets worse?
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 1 — Two-column illustration of the two sources of undirected
+
+Create a standalone D3 v7 HTML figure for "Two-column illustration of the two sources of undirected". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-01.html`
+
+---
+
+### Figure 2 — PC is a sequence of decisions grounded in specific tests, not a...
+
+Create a standalone D3 v7 HTML figure for "PC is a sequence of decisions grounded in specific tests, not a...". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-02.html`
+
+---
+
+### Figure 3 — GES and PC approach the same problem from different angles
+
+Create a standalone D3 v7 HTML figure for "GES and PC approach the same problem from different angles". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-03.html`
+
+---
+
+### Figure 4 — NOTEARS turns a combinatorial search into a calculus problem
+
+Create a standalone D3 v7 HTML figure for "NOTEARS turns a combinatorial search into a calculus problem". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-04.html`
+
+---
+
+### Figure 5 — FCI's more complex output
+
+Create a standalone D3 v7 HTML figure for "FCI's more complex output". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-05.html`
+
+---
+
+### Figure 6 — Decision tree for algorithm selection
+
+Create a standalone D3 v7 HTML figure for "Decision tree for algorithm selection". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-06.html`
+
+---
+
+### Figure 7 — Illustration of the CPDAG handoff patterns
+
+Create a standalone D3 v7 HTML figure for "Illustration of the CPDAG handoff patterns". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-07.html`
+
+---
+
+### Figure 8 — Flowchart of the three-step resolution protocol
+
+Create a standalone D3 v7 HTML figure for "Flowchart of the three-step resolution protocol". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-08.html`
+
+---
+
+### Figure 9 — Bootstrap orientation frequency chart for three example edges
+
+Create a standalone D3 v7 HTML figure for "Bootstrap orientation frequency chart for three example edges". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-09.html`
+
+---
+
+### Figure 10 — Decision tree for the more-data / more-experts diagnostic
+
+Create a standalone D3 v7 HTML figure for "Decision tree for the more-data / more-experts diagnostic". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-10.html`
+
+---
+
+### Figure 11 — Time-series line chart showing structural drift monitoring over
+
+Create a standalone D3 v7 HTML figure for "Time-series line chart showing structural drift monitoring over". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-11.html`
+
+---
+
+### Figure 12 — Governance lifecycle
+
+Create a standalone D3 v7 HTML figure for "Governance lifecycle". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-12.html`
+
+---
+
+### Figure 13 — From interview to instrument: a structured workflow with no shortcuts.
+
+Create a standalone D3 v7 HTML figure for "From interview to instrument: a structured workflow with no shortcuts.". Use a horizontal bar chart with 5 labeled categories and approximate values from 0 to 100. Marks: bars, direct labels, and concise value labels. Channels: category position, quantitative bar length, and color for the primary highlighted item only. Use a zero baseline. Include title, desc, role="img", aria-labelledby, ResizeObserver redraw, dark mode CSS variables, and reduced-motion safeguards. Deliver as one HTML file with inline CSS and the D3 7.9.0 CDN.
+
+> Reference implementation: `d3/17-resolving-the-graph-fig-13.html`

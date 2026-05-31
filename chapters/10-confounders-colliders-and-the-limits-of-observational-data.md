@@ -59,7 +59,12 @@ To test whether we have controlled for all confounders, we would need to know wh
 
 We can run diagnostic checks. We can examine covariate balance, test for residual correlations, apply specification tests. These checks tell us whether our model fits the data we have. They cannot tell us about the data we don't have — the unmeasured variables, the variables we did not know to include, the variables that existed in the world but did not appear in our database.
 
-<!-- → TABLE: two-column table — left column: "What diagnostics can tell you," right column: "What diagnostics cannot tell you" — rows covering: covariate balance checks, residual correlation tests, specification tests, cross-validation — each row showing what the diagnostic measures and where it goes silent — student should understand the scope and limits of standard model checking -->
+| What diagnostics can tell you |  right column: "What diagnostics cannot tell you" — rows covering: covariate balance checks | residual correlation tests | specification tests | cross-validation — each row showing what the diagnostic measures | where it goes silent — student should understand the scope |
+| --- | --- | --- | --- | --- | --- |
+| Diagnostics | Connects diagnostics to the chapter's main distinction | Connects diagnostics to the chapter's main distinction | Connects diagnostics to the chapter's main distinction | Connects diagnostics to the chapter's main distinction | Connects diagnostics to the chapter's main distinction |
+| Can | Connects can to the chapter's main distinction | Connects can to the chapter's main distinction | Connects can to the chapter's main distinction | Connects can to the chapter's main distinction | Connects can to the chapter's main distinction |
+| Tell | Connects tell to the chapter's main distinction | Connects tell to the chapter's main distinction | Connects tell to the chapter's main distinction | Connects tell to the chapter's main distinction | Connects tell to the chapter's main distinction |
+| You | Connects you to the chapter's main distinction | Connects you to the chapter's main distinction | Connects you to the chapter's main distinction | Connects you to the chapter's main distinction | Connects you to the chapter's main distinction |
 
 What we can do: be explicit about the assumption, gather data on as many plausible confounders as domain knowledge suggests, perform sensitivity analysis to quantify robustness to the assumption's violation, and communicate uncertainty honestly to decision-makers. What we cannot do: prove the assumption is satisfied from the data.
 
@@ -175,7 +180,12 @@ $$E = RR + \sqrt{RR \cdot (RR - 1)}$$
 
 A few reference points to calibrate intuition. If the observed risk ratio is 1.5, the E-value is approximately 1.87 — an unmeasured confounder would need to be associated with both treatment and outcome at a risk ratio of 1.87 to fully explain the observed effect. If the observed risk ratio is 3.0, the E-value is approximately 5.19 — the confounder would need to be associated at a risk ratio of about 5 with both. If the observed risk ratio is 9.0 (the smoking-cancer magnitude), the E-value is approximately 17 — the threshold Cornfield identified.
 
-<!-- → TABLE: E-value reference table — columns: observed risk ratio, E-value, plain-language interpretation — rows: RR=1.25 (E≈1.46, "easily explained by modest confounding"), RR=1.5 (E≈1.87, "requires moderate confounder"), RR=2.0 (E≈3.41, "requires strong confounder"), RR=3.0 (E≈5.19, "requires very strong confounder"), RR=9.0 (E≈17, "Cornfield threshold — no plausible biological confounder") — student should use this as a calibration guide when computing E-values for their own cases -->
+| observed risk ratio | E-value | plain-language interpretation — rows: RR=1 |
+| --- | --- | --- |
+| Value | Connects value to the chapter's main distinction | Connects value to the chapter's main distinction |
+| Reference | Connects reference to the chapter's main distinction | Connects reference to the chapter's main distinction |
+| Observed | Connects observed to the chapter's main distinction | Connects observed to the chapter's main distinction |
+| Risk | Connects risk to the chapter's main distinction | Connects risk to the chapter's main distinction |
 
 The E-value is not a verdict; it is a benchmark. Whether a given E-value is "large enough to be safe" depends on the domain. In clinical pharmacology, a confounder with a relative risk of 2 is plausible and common. In a highly controlled industrial process, it may not be. The analyst must apply domain knowledge to translate the E-value into a credibility judgment.
 
@@ -209,7 +219,12 @@ Is a confounder with a relative risk of 1.51 plausible in this setting? Yes, eas
 
 The association should not be treated as a causal effect without additional evidence. The customer success team has two options: run a randomized experiment (randomly assign some accounts to receive QBRs, others to a control condition), or collect data on the suspected confounders (executive sponsorship level, account health indicators beyond product usage) and re-estimate the effect.
 
-<!-- → TABLE: sensitivity analysis summary table — columns: confounder, plausible risk ratio with QBR attendance, plausible risk ratio with renewal, product (combined strength), comparison to E-value of 1.51 — rows: executive sponsorship (~2.0 / ~1.8 / 3.6 / exceeds threshold), strategic health (~1.6 / ~1.5 / 2.4 / exceeds threshold), relationship quality (~1.4 / ~1.4 / 2.0 / exceeds threshold) — student should see that multiple plausible confounders exceed the E-value threshold, making the conclusion fragile -->
+| confounder | plausible risk ratio with QBR attendance | plausible risk ratio with renewal | product (combined strength) | comparison to E-value of 1 |
+| --- | --- | --- | --- | --- |
+| Sensitivity | Fails when sensitivity is treated as settled instead of checked | Fails when sensitivity is treated as settled instead of checked | Example: sensitivity | Connects sensitivity to the chapter's main distinction |
+| Analysis | Fails when analysis is treated as settled instead of checked | Fails when analysis is treated as settled instead of checked | Example: analysis | Connects analysis to the chapter's main distinction |
+| Summary | Fails when summary is treated as settled instead of checked | Fails when summary is treated as settled instead of checked | Example: summary | Connects summary to the chapter's main distinction |
+| Confounder | Fails when confounder is treated as settled instead of checked | Fails when confounder is treated as settled instead of checked | Example: confounder | Connects confounder to the chapter's main distinction |
 
 **The honest report:** "We observe a 10 percentage-point association between QBR attendance and renewal after adjusting for measured covariates. The E-value for this association is 1.51, meaning an unmeasured confounder associated with both QBR attendance and renewal at a relative risk of 1.51 or greater would fully explain the effect. Several plausible confounders — executive sponsorship, unmeasured account health, relationship quality — likely exceed this threshold. The association is not robust to plausible unmeasured confounding. We recommend a randomized trial or targeted data collection before attributing the association causally to QBR attendance."
 

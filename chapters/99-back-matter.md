@@ -1,79 +1,129 @@
-<!--
-    99-back-matter.md
-    BACK MATTER — everything that appears after the final chapter.
-
-    Sections in order:
-      1. Acknowledgments
-      2. About the Author
-      3. Notes (by chapter, if using endnotes rather than footnotes)
-      4. References / Bibliography
-      5. Index (omit for online/free release; include for print/press)
-
-    Back matter continues the arabic page numbering from where
-    the final chapter ended. No page restart.
--->
-
 ---
 
 ## Acknowledgments
 
-<!-- Keep it short. Name the people who materially helped the book exist:
-     readers of drafts, researchers, editors, collaborators.
-     One paragraph is enough unless the debt is substantial.
-     Avoid laundry lists. -->
-
-[ACKNOWLEDGMENTS PLACEHOLDER]
+This rough draft acknowledges the readers, students, collaborators, reviewers, and AI-assisted production workflows that help turn a book from a directory of files into a usable learning object. Specific names should be added after manuscript review.
 
 ---
 
 ## About the Author
 
-<!-- Third person. 100–200 words. Credentials that are relevant to THIS book.
-     Not a full CV. End with a line about where to find you online. -->
+**Chris Selland & Nik Bear Brown** bring together domain expertise, teaching practice, and AI-era production methods for this book. The shared aim is practical: help readers understand the work well enough to use AI without surrendering the judgment the work requires.
 
-[AUTHOR BIO PLACEHOLDER]
+**Nik Bear Brown** is an Associate Teaching Professor in the College of Engineering at Northeastern University. His work spans artificial intelligence, machine learning, computational biology, data visualization, game development, music technology, and education.
+
+[nikbearbrown.com](https://www.nikbearbrown.com) · [irreducibly.xyz](https://irreducibly.xyz) · [bearbrown.co](https://www.bearbrown.co/)
 
 ---
 
 ## Notes
 
-<!-- Use this section for endnotes if you prefer them over footnotes.
-     Group by chapter. Format:
+Notes are organized by chapter in the production draft.
 
-     ### Chapter 1
+### Chapter 1
 
-     1. [Citation or explanatory note]
-     2. [Citation or explanatory note]
+- Sources to be finalized during editorial review for "The Dashboard That Lied".
 
-     ### Chapter 2
-     ...
+### Chapter 2
 
-     If using footnotes in-line (pandoc [^1] syntax), delete this section.
--->
+- Sources to be finalized during editorial review for "The Map That Doesn't Move".
 
-[NOTES PLACEHOLDER]
+### Chapter 3
+
+- Sources to be finalized during editorial review for "What We Mean When We Say "Real-Time"".
+
+### Chapter 4
+
+- Sources to be finalized during editorial review for "Risk Is Two Numbers, Not One".
+
+### Chapter 5
+
+- Sources to be finalized during editorial review for "Pearl's Ladder".
+
+### Chapter 6
+
+- Sources to be finalized during editorial review for "Graphs That Think".
+
+### Chapter 7
+
+- Sources to be finalized during editorial review for "The Equivalence Problem".
+
+### Chapter 8
+
+- Sources to be finalized during editorial review for "Estimating Effects".
+
+### Chapter 9
+
+- Sources to be finalized during editorial review for "The Counterfactual".
+
+### Chapter 10
+
+- Sources to be finalized during editorial review for "Confounders, Colliders, and the Limits of Observational Data".
+
+### Chapter 11
+
+- Sources to be finalized during editorial review for "Treatments".
+
+### Chapter 12
+
+- Sources to be finalized during editorial review for "The Plumber's Objection".
+
+### Chapter 13
+
+- Sources to be finalized during editorial review for "The Living Model Defined".
+
+### Chapter 14
+
+- Sources to be finalized during editorial review for "The Expert in the Room".
+
+### Chapter 15
+
+- Sources to be finalized during editorial review for "How Experts Get Causation Wrong".
+
+### Chapter 16
+
+- Sources to be finalized during editorial review for "The Machine That Interviews the Expert".
+
+### Chapter 17
+
+- Sources to be finalized during editorial review for "Resolving the Graph".
+
+### Chapter 18
+
+- Sources to be finalized during editorial review for "From Graph to Decision".
+
+### Chapter 19
+
+- Sources to be finalized during editorial review for "The Causal Brain Executive Report".
+
+### Chapter 20
+
+- Sources to be finalized during editorial review for "Keeping the Model Alive".
+
 
 ---
 
 ## References
 
-<!-- Full bibliography. Alphabetical by author last name, or grouped by chapter.
-     Use a consistent citation style throughout (Chicago, APA, or a hybrid).
-
-     Example entry (Chicago author-date):
-     Pearl, Judea, and Dana Mackenzie. *The Book of Why*. Basic Books, 2018.
--->
-
-[REFERENCES PLACEHOLDER]
+A full bibliography will be compiled after fact-checking. Use a consistent citation style across the manuscript.
 
 ---
 
-## Index
+## No Index
 
-<!-- For online/free release: delete this section.
-     For print/press: compile after all other content is final.
-     Pandoc does not auto-generate an index; use dedicated indexing software
-     (e.g., indexd, Word indexing tools) or a professional indexer. -->
+This book is designed primarily for Kindle, online reading, and integration with **Medhavy** / **Medhavi**, the AI-powered intelligent textbook system. In those environments, search, links, adaptive navigation, glossary lookup, and generated study paths do more useful work than a static print index. A print index can be commissioned later if the book receives a print edition, but this draft intentionally omits one.
 
-[INDEX PLACEHOLDER — omit for online release]
+---
 
+## Glossary
+
+- **Dashboard.** Short definition to be completed during final editorial pass.
+- **Doesn.** Short definition to be completed during final editorial pass.
+- **Real-Time.** Short definition to be completed during final editorial pass.
+- **Numbers.** Short definition to be completed during final editorial pass.
+- **Pearl.** Short definition to be completed during final editorial pass.
+- **Ladder.** Short definition to be completed during final editorial pass.
+- **Graphs.** Short definition to be completed during final editorial pass.
+- **Think.** Short definition to be completed during final editorial pass.
+- **Equivalence.** Short definition to be completed during final editorial pass.
+- **Estimating.** Short definition to be completed during final editorial pass.

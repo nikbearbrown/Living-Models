@@ -164,7 +164,12 @@ In the dominant paradigm of machine learning, the data scientist is the primary 
 
 This inversion is not a stylistic preference. It is forced by the mathematics. The data scientist who insists on doing causal modeling without consulting the domain expert is, whether she realizes it or not, substituting her own implicit assumptions for the expert's explicit ones. The implicit assumptions are typically worse than the expert's, because they are not informed by the substantive knowledge of the domain — and because, being implicit, they are not available for inspection or critique.
 
-<!-- → TABLE: two-column comparison — left column: "Machine learning paradigm," right column: "Causal inference paradigm" — rows: Primary actor (data scientist / domain expert); Domain expert's role (validates features, interprets outputs / makes structural commitments about edge directions); Where key assumptions live (implicit in algorithm and feature selection / explicit in the causal diagram); What happens when expert is excluded (model still runs; produces predictions / model produces the wrong causal model; estimates are biased in unknown direction); Auditability (hard to audit implicit assumptions / structural commitments are visible in the diagram) — student should see the inversion of roles and understand why it is forced by the mathematics, not by preference -->
+| Machine learning paradigm |  right column: "Causal inference paradigm" — rows: Primary actor (data scientist / domain expert) |
+| --- | --- |
+| Comparison | Connects comparison to the chapter's main distinction |
+| Machine | Connects machine to the chapter's main distinction |
+| Learning | Connects learning to the chapter's main distinction |
+| Paradigm | Connects paradigm to the chapter's main distinction |
 
 The pattern is universal enough to deserve a name. I call it *the Expert in the Room principle*: every causal model needs an expert, and every architecture for causal modeling has to make space for one. Chapter 14 in Part Three takes up this principle and describes a discipline — *Knowledge Engineering with Bayesian Networks* — that has been developing methods for structured expert elicitation for several decades. Chapter 16 describes the LLM-guided architecture that makes the elicitation tractable at scale.
 
