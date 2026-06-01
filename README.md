@@ -1,45 +1,48 @@
 # Living Models
 
+Causal Intelligence for the Decisions That Actually Matter
+
 **Author:** Chris Selland & Nik Bear Brown  
 **Publisher:** Bear Brown, LLC  
+**Copyright:** Copyright © 2026 Chris Selland & Nik Bear Brown. All rights reserved.  
 **Edition:** 2026
 
-## Overview
+## Summary
 
-The first sign of trouble is usually not failure. It is fluency. The draft looks clean. The answer sounds reasonable. The chart has labels. The code runs. The plan has phases. The explanation has the rhythm of expertise. Nothing in the surface announces that a human still has work to do. This book is about the gap between a polished artifact and a trustworthy one. The central argument of **Living Models** is that readers need a working method for the part of the work that cannot be delegated: the judgment...
+*Living Models* is a structured textbook for readers who need a clear path through the subject rather than a loose collection of explanations. It begins with Chapter 1 — The Dashboard That Lied, moves through 20 core chapters, and ends with Chapter 20 — Keeping the Model Alive.
+
+AI matters to *Living Models* because the modern textbook is no longer only a static container. It is also part of a learning system: searchable, remixable, explainable, and increasingly connected to tools such as Medhavy. For Bear Brown books, the relevant question is not whether AI can replace the learner or the teacher. It cannot. The useful question is what AI can make easier to inspect: definitions, worked examples, misconceptions, practice sequences, alternate explanations, and the structure of an argument. This book treats AI as infrastructure for practical AI-assisted authorship, analysis, and production. The chapters should still stand on their own as readable prose, but they are also designed to be legible to an intelligent textbook system.
 
 ## Table of Contents
 
-- [Front Matter](chapters/00-frontmatter.md)
-- [Introduction](chapters/00-introduction.md)
-- [Chapter 1 — The Dashboard That Lied](chapters/01-the-dashboard-that-lied.md)
-- [Chapter 2 — The Map That Doesn't Move](chapters/02-the-map-that-doesnt-move.md)
-- [Chapter 3 — What We Mean When We Say "Real-Time"](chapters/03-what-we-mean-when-we-say-realtime.md)
-- [Chapter 4 — Risk Is Two Numbers, Not One](chapters/04-risk-is-two-numbers-not-one.md)
-- [Chapter 5 — Pearl's Ladder](chapters/05-pearls-ladder.md)
-- [Chapter 6 — Graphs That Think](chapters/06-graphs-that-think.md)
-- [Chapter 7 — The Equivalence Problem](chapters/07-the-equivalence-problem.md)
-- [Chapter 8 — Estimating Effects](chapters/08-estimating-effects.md)
-- [Chapter 9 — The Counterfactual](chapters/09-the-counterfactual.md)
-- [Chapter 10 — Confounders, Colliders, and the Limits of Observational Data](chapters/10-confounders-colliders-and-the-limits-of-observational-data.md)
-- [Chapter 11 — Treatments](chapters/11-treatments.md)
-- [Chapter 12 — The Plumber's Objection](chapters/12-the-plumbers-objection.md)
-- [Chapter 13 — The Living Model Defined](chapters/13-the-living-model-defined.md)
-- [Chapter 14 — The Expert in the Room](chapters/14-the-expert-in-the-room.md)
-- [Chapter 15 — How Experts Get Causation Wrong](chapters/15-how-experts-get-causation-wrong.md)
-- [Chapter 16 — The Machine That Interviews the Expert](chapters/16-the-machine-that-interviews-the-expert.md)
-- [Chapter 17 — Resolving the Graph](chapters/17-resolving-the-graph.md)
-- [Chapter 18 — From Graph to Decision](chapters/18-from-graph-to-decision.md)
-- [Chapter 19 — The Causal Brain Executive Report](chapters/19-the-causal-brain-executive-report.md)
-- [Chapter 20 — Keeping the Model Alive](chapters/20-keeping-the-model-alive.md)
-- [Back Matter](chapters/99-back-matter.md)
+- **Chapter 1: Chapter 1 — The Dashboard That Lied.** *Pearl's Ladder, silent failures, and the four rungs of analytics maturity.* In 2012, J.C. Penney's incoming CEO Ron Johnson faced a different problem with the same underlying structure. Where the platform team had trusted a number that was technically false, Johnson trusted...
+- **Chapter 2: Chapter 2 — The Map That Doesn't Move.** *Why predictive models fail under intervention.* **Nik Bear Brown** On November 2, 2021, Zillow announced it was winding down Zillow Offers, the iBuying business it had built around an algorithmic pricing model. The Q3 2021 loss for the segment was $381 million....
+- **Chapter 3: Chapter 3 — What We Mean When We Say "Real-Time".** *Three latencies, and what "continually updated" actually requires.* Here is a claim you will encounter many times in your career: *"Our system is real-time."* The claim feels precise. It sounds technical. It implies something specific about the relationship between what is happening...
+- **Chapter 4: Chapter 4 — Risk Is Two Numbers, Not One.** *Probability, impact, and the foundational metric of decision intelligence.* In August 1998, Long-Term Capital Management — a hedge fund staffed by some of the most sophisticated quantitative minds in finance, including two Nobel laureates in economics — began experiencing daily losses that...
+- **Chapter 5: Chapter 5 — Pearl's Ladder.** *Association, intervention, counterfactual — and why moving between them is categorical, not incremental.* **Nik Bear Brown** A SaaS company runs a welcome survey to new customers. It is a polite five-question email that arrives in the inbox three days after sign-up. About...
+- **Chapter 6: Chapter 6 — Graphs That Think.** *DAGs as maps of mechanism, structural causal models, and the difference between an equation and a cause.* A causal diagram is a set of nodes connected by arrows. Each node is a variable. Each arrow points from a cause to an effect....
+- **Chapter 7: Chapter 7 — The Equivalence Problem.** *Markov equivalence, the CPDAG, and why human domain knowledge is mathematically necessary, not merely useful.* **Nik Bear Brown** A startup data team is running a causal discovery analysis on customer behavior. They have rich observational data — months of click streams, session...
+- **Chapter 8: Chapter 8 — Estimating Effects.** *From graph structure to quantified causal effects.* We met the backdoor criterion in Chapter 4. The criterion answers a single question: given a causal diagram and a target query — what is the causal effect of $X$ on $Y$? — which set...
+- **Chapter 9: Chapter 9 — The Counterfactual.** *Pearl's abduction-action-prediction procedure, and why the individual-level counterfactual is the hardest and most valuable form of causal reasoning.* The Ladder of Causation, as we saw in Chapter 5, is sealed in one direction. Rung 1 cannot answer Rung 2 questions; Rungs 1...
+- **Chapter 10: Chapter 10 — Confounders, Colliders, and the Limits of Observational Data.** *The unconfoundedness assumption, latent confounders, collider bias, and the honest account of what causal inference cannot do.* **Nik Bear Brown** In the early 2000s, a series of large observational studies appeared to show that hormone replacement therapy (HRT) reduced the risk of...
+- **Chapter 11: Chapter 11 — Treatments.** *Randomized controlled trials, Esther Duflo's experimental design at scale, the translation from clinical "treatment" to organizational "intervention," and the social systems that violate SUTVA by design.* Chapter 10 ended in a hard place. Observational methods — even the best ones, armed with...
+- **Chapter 12: Chapter 12 — The Plumber's Objection.** *Duflo's "Economist as Plumber," what fills the distance between a correct causal estimate and an effective organizational change, and why a Living Model has to do more than estimate effects.* In her 2017 presidential address to the American Economic Association — the...
+- **Chapter 13: Chapter 13 — The Living Model Defined.** *Four properties, one architecture, and what makes a Living Model a different class of object.* **Nik Bear Brown** A board meeting at a midsize aerospace manufacturer. The CIO has been given fifteen minutes to brief the directors on the company's analytics capabilities....
+- **Chapter 14: Chapter 14 — The Expert in the Room.** *Why causal graphs cannot be built from data alone, what Knowledge Engineering with Bayesian Networks knows after twenty years of refining structured elicitation, and why the discipline has not yet reached the corporate boardroom.* In the early 2000s, a team of ecologists...
+- **Chapter 15: Chapter 15 — How Experts Get Causation Wrong.** *Collider blindness, feedback-loop simplification, domain-matching heuristics — and when to trust an expert's causal judgment versus when to interrogate it.* Chapter 14 argued that the expert is mathematically necessary in the causal modeling room. The argument was that observational data alone cannot...
+- **Chapter 16: Chapter 16 — The Machine That Interviews the Expert.** *LLM-guided causal elicitation, the Nina-framework architectural parallel, the forty-five-minute first-pass DAG, and the multi-agent design that makes consistency and equivalence-checking tractable.* **Nik Bear Brown** A founder sits down for a Nina interview at her brand strategist's recommendation. She has been told the...
+- **Chapter 17: Chapter 17 — Resolving the Graph.** *PC, GES, NOTEARS, FCI; the CPDAG handoff between expert elicitation and data-driven discovery; when to gather more data and when to run more expert sessions; and the validated graph as a living artifact under governance.* The forty-five-minute elicitation produced a CPDAG. Some...
+- **Chapter 18: Chapter 18 — From Graph to Decision.** *Parameterizing the graph, running the counterfactual, ranking interventions by Expected Value, and the constrained-knapsack from rankings to portfolio decisions.* The graph specifies which variables cause which. Parameterization specifies *how strongly* and *how* — the functional form and the magnitudes of each causal...
+- **Chapter 19: Chapter 19 — The Causal Brain Executive Report.** *The auditable recommendation in four parts; what LLM narration must do, must never do; visualization that serves the decision rather than the model; and where accountability sits when the recommendation turns out to be wrong.* Monday morning, eight forty AM. The CEO...
+- **Chapter 20: Chapter 20 — Keeping the Model Alive.** *Bayesian updating of edge parameters, structural change detection, DecisionOps vs. MLOps, and the minimum viable feedback loop that closes the orchestration loop introduced in Chapter 13.* **Nik Bear Brown** A logistics company has been running a Living Model in production for eighteen...
 
-## Copyright and License
+## Files
 
-Copyright © 2026 Chris Selland & Nik Bear Brown. All rights reserved.
+- `chapters/00-frontmatter.md` — title page, copyright, dedication, and preface
+- `chapters/00-introduction.md` — roadmap and book-level AI note
+- `chapters/99-back-matter.md` — acknowledgments, author note, references placeholder, and Medhavy note
+- `LICENSE.md` — rights and reuse terms
 
-See [LICENSE.md](LICENSE.md) for permissions and restrictions.
+## Medhavy
 
-## Medhavy / Medhavi Integration
-
-This book is intended for Kindle, online reading, and integration with Medhavy, an AI-powered intelligent textbook system. The static manuscript provides the durable text; Medhavy can provide adaptive practice, glossary support, study paths, and feedback loops.
+This book is prepared for Kindle, online publication, and integration with Medhavy: https://www.medhavy.com/
