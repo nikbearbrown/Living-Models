@@ -443,6 +443,10 @@ The ideas in this chapter didn't appear from nowhere. **Margaret Mead** was deve
 ![Margaret Mead, c. 1930s. AI-generated portrait based on a public domain photograph (Wikimedia Commons).](images/margaret-mead.jpg)
 *Margaret Mead, c. 1930s. AI-generated portrait based on a public domain photograph.*
 
+![Margaret Mead](../images/margaret-mead-blu.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
+
 **Run this:**
 
 ```

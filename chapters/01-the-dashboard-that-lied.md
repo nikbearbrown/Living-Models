@@ -309,6 +309,10 @@ The ideas in this chapter didn't appear from nowhere. **John Snow** was mapping 
 ![John Snow, c. 1850s. AI-generated portrait based on a public domain photograph (Wikimedia Commons).](images/john-snow.jpg)
 *John Snow, c. 1850s. AI-generated portrait based on a public domain photograph.*
 
+![John Snow](../images/john-snow-50m.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
+
 **Run this:**
 
 ```
