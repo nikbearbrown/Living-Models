@@ -332,6 +332,10 @@ The ideas in this chapter didn't appear from nowhere. **Prasanta Chandra Mahalan
 ![Prasanta Chandra Mahalanobis, c. 1950s. AI-generated portrait based on a public domain photograph (Wikimedia Commons).](images/prasanta-chandra-mahalanobis.jpg)
 *Prasanta Chandra Mahalanobis, c. 1950s. AI-generated portrait based on a public domain photograph.*
 
+![Prasanta Chandra Mahalanobis](../images/prasanta-chandra-mahalanobis-i48.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
+
 **Run this:**
 
 ```

@@ -293,6 +293,10 @@ The ideas in this chapter didn't appear from nowhere. **Sewall Wright** was inve
 ![Sewall Wright, c. 1920s. AI-generated portrait based on a public domain photograph (Wikimedia Commons).](images/sewall-wright.jpg)
 *Sewall Wright, c. 1920s. AI-generated portrait based on a public domain photograph.*
 
+![Sewall Wright](../images/sewall-wright-7wq.png)
+
+*Puppet Art by [Nik Bear Brown](https://www.nikbearbrown.com/).*
+
 **Run this:**
 
 ```
